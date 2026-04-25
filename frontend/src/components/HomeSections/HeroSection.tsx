@@ -1,11 +1,7 @@
 import CtaLinkButton from '../CtaLinkButton/CtaLinkButton';
 import './HeroSection.css';
 
-type HeroSectionProps = {
-  apiStatus: string;
-};
-
-const HeroSection = ({ apiStatus }: HeroSectionProps) => {
+const HeroSection = () => {
   return (
     <section className="home-hero">
       <div className="home-section__container">
@@ -24,7 +20,6 @@ const HeroSection = ({ apiStatus }: HeroSectionProps) => {
               tone="light"
             />
           </div>
-          <p className="home-hero__status">{apiStatus}</p>
         </div>
       </div>
     </section>

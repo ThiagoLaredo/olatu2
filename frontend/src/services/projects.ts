@@ -1,21 +1,14 @@
+import { projects } from '../data/mockProjects';
 import type { Project } from '../types/project';
 
 export const getProjects = async (): Promise<Project[]> => {
-  const response = await fetch('/api/projects');
-
-  if (!response.ok) {
-    throw new Error('Erro ao carregar projetos');
-  }
-
-  return response.json() as Promise<Project[]>;
+  return Promise.resolve(projects);
 };
 
 export const getProjectById = async (id: number): Promise<Project> => {
-  const response = await fetch(`/api/projects/${id}`);
-
-  if (!response.ok) {
-    throw new Error('Projeto nao encontrado');
+  const project = projects.find(p => p.id === id);
+  if (project) {
+    return Promise.resolve(project);
   }
-
-  return response.json() as Promise<Project>;
+  throw new Error('Projeto não encontrado');
 };
