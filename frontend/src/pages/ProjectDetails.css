@@ -1,0 +1,125 @@
+.project-details__container {
+  max-width: var(--laptop-content-width);
+  margin: 0 auto;
+}
+
+.project-details__layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.15fr);
+  gap: 52px;
+  align-items: start;
+}
+
+.project-details__info {
+  position: sticky;
+  top: 88px;
+}
+
+.project-details__type {
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.project-details__info .internal-page-title {
+  margin: 0 0 24px;
+  color: var(--text-h);
+}
+
+.project-details__description {
+  margin: 0 0 28px;
+  max-width: 62ch;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.project-details__info h2 {
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  text-transform: uppercase;
+}
+
+.project-details__technologies {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-details__technologies li {
+  padding: 7px 14px;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  font-size: 0.78rem;
+  color: #000;
+  white-space: nowrap;
+}
+
+.project-details__actions {
+  margin-top: 40px;
+  display: grid;
+  justify-items: start;
+  gap: 30px;
+}
+
+.project-details__visit {
+  --cta-circle-bg: var(--color-sub-white-1);
+}
+
+.project-details__back-link {
+  color: var(--text);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--text) 40%, transparent);
+  padding-bottom: 2px;
+  transition: color 180ms ease, border-color 180ms ease;
+}
+
+.project-details__back-link:hover {
+  color: var(--text-h);
+  border-color: var(--text-h);
+}
+
+.project-details__gallery {
+  display: grid;
+  gap: 16px;
+}
+
+.project-details__image-wrap {
+  margin: 0;
+  background: color-mix(in srgb, var(--social-bg) 78%, #bfbfbf);
+}
+
+.project-details__image-wrap img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.project-details__feedback {
+  margin: 0;
+  color: var(--text);
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 980px) {
+  .project-details__layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .project-details__info {
+    position: static;
+  }
+}

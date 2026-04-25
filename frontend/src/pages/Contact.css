@@ -1,0 +1,67 @@
+.contact-page__container {
+  max-width: var(--laptop-content-width);
+  margin: 0 auto;
+}
+
+.contact-page .internal-page-title {
+  margin-top: 0;
+  margin-bottom: 24px;
+  max-width: 16ch;
+}
+
+.contact-page__intro {
+  max-width: 64ch;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+.contact-page__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.contact-page__card {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #000;
+  border-radius: 0;
+  background: transparent;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.contact-page__card:hover {
+  background: #000;
+  color: #fff;
+}
+
+.contact-page__label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact-page__value {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 1024px) {
+  .contact-page__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-page__value {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: initial;
+  }
+}
