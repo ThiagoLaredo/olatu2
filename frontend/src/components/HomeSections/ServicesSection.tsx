@@ -169,6 +169,24 @@ const ServicesSection = () => {
               ))}
             </div>
           </div>
+
+          {/* Mobile-only cards */}
+          <ul className="services-mobile-list" aria-label="Serviços">
+            {services.map((service) => (
+              <li key={`mobile-${service.title}`} className="services-mobile-card">
+                <h3 className="services-mobile-card__title">{service.title}</h3>
+                <div className="services-mobile-card__media">
+                  <img
+                    className="services-mobile-card__image"
+                    src={service.image}
+                    alt={service.title}
+                    loading="lazy"
+                  />
+                </div>
+                <p className="services-mobile-card__description">{service.description}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

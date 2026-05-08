@@ -8,6 +8,7 @@ const WEBP_QUALITY = 78;
 const SUPPORTED_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp']);
 const GENERATED_PATTERN = /-w\d+\.webp$/i;
 const DERIVED_IMAGE_PATTERN = /-(?:w\d+|\d{3,4})$/i;
+const REQUESTED_CLIENTS = process.argv.slice(2).map((name) => name.trim().toLowerCase()).filter(Boolean);
 
 const formatBytes = (bytes) => {
   if (bytes < 1024) return `${bytes} B`;
@@ -18,9 +19,18 @@ const formatBytes = (bytes) => {
 
 const getClientFolders = async () => {
   const entries = await fs.readdir(WORKS_ROOT, { withFileTypes: true });
-  return entries
+  const folders = entries
     .filter((entry) => entry.isDirectory())
     .map((entry) => path.join(WORKS_ROOT, entry.name));
+
+  if (REQUESTED_CLIENTS.length === 0) {
+    return folders;
+  }
+
+  return folders.filter((folderPath) => {
+    const clientName = path.basename(folderPath).toLowerCase();
+    return REQUESTED_CLIENTS.includes(clientName);
+  });
 };
 
 const getSourceImages = async (folderPath) => {
@@ -85,6 +95,10 @@ const optimizeImage = async (sourcePath) => {
 
 const main = async () => {
   console.log(`Iniciando otimizacao em ${WORKS_ROOT}`);
+
+  if (REQUESTED_CLIENTS.length > 0) {
+    console.log(`Clientes selecionados: ${REQUESTED_CLIENTS.join(', ')}`);
+  }
 
   const folders = await getClientFolders();
 

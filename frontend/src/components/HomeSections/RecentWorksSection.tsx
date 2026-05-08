@@ -17,26 +17,11 @@ const extractClientName = (title: string) => {
 };
 
 const PARALLAX_STRENGTH = 200; // px de deslocamento total
+const REVEAL_THRESHOLD = 0.35;
+const REVEAL_ROOT_MARGIN = '0px 0px -12% 0px';
 
 const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value));
-
-const renderStaggeredTitle = (text: string) => (
-  text.split('').map((char, index) => {
-    const safeChar = char === ' ' ? '\u00A0' : char;
-
-    return (
-      <span
-        key={`${safeChar}-${index}`}
-        className="recent-work-card__title-letter"
-        style={{ '--i': index } as CSSProperties}
-        aria-hidden="true"
-      >
-        {safeChar}
-      </span>
-    );
-  })
-);
 
 const RecentWorksSection = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -68,6 +53,7 @@ const RecentWorksSection = () => {
 
         el.style.setProperty('--scroll-shift', `${translateY}px`);
       });
+
     };
 
     const onScroll = () => {
@@ -108,8 +94,8 @@ const RecentWorksSection = () => {
         });
       },
       {
-        threshold: 0.15,
-        rootMargin: '0px 0px 20% 0px',
+        threshold: REVEAL_THRESHOLD,
+        rootMargin: REVEAL_ROOT_MARGIN,
       }
     );
 
@@ -129,8 +115,10 @@ const RecentWorksSection = () => {
   return (
     <section className="home-section home-section--light" aria-labelledby="recent-works-title">
       <div className="home-section__container">
-        <h2 ref={titleRef} id="recent-works-title" className="fade-up-enter">Trabalhos recentes</h2>
-        <p ref={introRef} className="recent-works-intro fade-up-enter">
+        <h2 ref={titleRef} id="recent-works-title" className="recent-works-fade-enter">
+          Trabalhos recentes
+        </h2>
+        <p ref={introRef} className="recent-works-intro recent-works-fade-enter">
           Explore alguns dos nossos projetos mais recentes.
         </p>
         {loading && <p className="recent-works-feedback">Carregando projetos...</p>}
@@ -183,15 +171,13 @@ const RecentWorksSection = () => {
                       </picture>
                     </div>
                   </Link>
-                  <div className="recent-work-card__content">
-                    <h3 aria-label={extractClientName(project.title)}>
-                      {renderStaggeredTitle(extractClientName(project.title))}
-                    </h3>
+                  <div className="recent-work-card__content" aria-label={extractClientName(project.title)}>
+                    <h3>{extractClientName(project.title)}</h3>
                   </div>
                 </article>
               ))}
             </div>
-            <div ref={footerRef} className="recent-works-footer fade-up-enter" style={{ '--reveal-delay': '120ms' } as CSSProperties}>
+            <div ref={footerRef} className="recent-works-footer recent-works-fade-enter">
               <CtaLinkButton to="/portfolio" label="Veja mais trabalhos" ariaLabel="Veja mais trabalhos" />
             </div>
           </>

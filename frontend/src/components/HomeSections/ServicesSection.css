@@ -166,6 +166,15 @@
   color: var(--color-sub-white-1);
 }
 
+@media (min-width: 901px) {
+  .services-showcase__titles,
+  .services-showcase__front-titles {
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .services-showcase__media {
   --media-tilt: 24deg;
   height: min(90vh, 500px);
@@ -242,38 +251,82 @@
   transform: translateY(0);
 }
 
+/* ── Mobile-only card list ── */
+.services-mobile-list {
+  display: none;
+}
+
 @media (max-width: 900px) {
+  /* Hide desktop scroll-showcase on mobile */
   .services-scroll {
-    --services-height: calc((var(--service-count, 3) + 1) * 90vh);
+    min-height: auto;
+  }
+
+  .services-scroll__pin {
+    position: static;
+    min-height: auto;
+    display: block;
+    padding: 0 0 64px;
   }
 
   .services-showcase {
-    min-height: 70vh;
-    align-items: start;
-  }
-
-  .services-showcase__media {
-    --media-tilt: 7deg;
-    width: min(64vw, 320px);
-    aspect-ratio: 3 / 4;
-    margin-top: 8vh;
-  }
-
-  .services-showcase__copy {
-    width: min(78vw, 420px);
-    left: 50%;
-    transform: translateX(-50%);
-    right: auto;
-    bottom: 2vh;
-    justify-content: center;
-  }
-
-  .services-showcase__description {
-    text-align: center;
+    display: none;
   }
 
   .services-scroll-indicator {
     display: none;
+  }
+
+  /* Show mobile card list */
+  .services-mobile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    list-style: none;
+    margin: 40px 0 0;
+    padding: 0;
+  }
+
+  .services-mobile-card {
+    padding: 48px 0;
+    border-top: 1px solid color-mix(in srgb, var(--text-h) 12%, transparent);
+  }
+
+  .services-mobile-card:last-child {
+    border-bottom: 1px solid color-mix(in srgb, var(--text-h) 12%, transparent);
+  }
+
+  .services-mobile-card__title {
+    margin: 0 0 28px;
+    font-family: var(--heading);
+    font-size: clamp(3rem, 14vw, 5rem);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: 0.01em;
+    color: var(--text-h);
+  }
+
+  .services-mobile-card__media {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+
+  .services-mobile-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .services-mobile-card__description {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+    font-weight: 300;
   }
 }
 

@@ -61,6 +61,8 @@ const ProjectDetails = () => {
     );
   }
 
+  const galleryImages = project.otherimages.filter((image) => image !== project.image);
+
   return (
     <>
       <InternalPageSection className="project-details" ariaLabelledby="project-details-title">
@@ -88,7 +90,7 @@ const ProjectDetails = () => {
             </aside>
 
             <div className="project-details__gallery internal-fade fade-delay-4" aria-label="Galeria do projeto">
-              {project.otherimages.map((image, index) => (
+              {galleryImages.map((image, index) => (
                 <figure className="project-details__image-wrap" key={`${image}-${index}`}>
                   <picture>
                     <source

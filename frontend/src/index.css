@@ -16,6 +16,7 @@
   --color-sub-gray-4: #bbb;
   --color-sub-white-1: #f2f2f2;
   --color-sub-white-2: #f6f6f6;
+  --color-sub-white-3: #c8c8c8;
   --custom-ease-1: cubic-bezier(0.475, 0.425, 0, 0.995);
   --custom-ease-2: cubic-bezier(0.835, -0.005, 0.06, 1);
   --custom-ease-3: cubic-bezier(0.19, 1, 0.22, 1);
@@ -130,6 +131,8 @@ h2 {
 
 .internal-page-shell {
   --internal-page-scroll-progress: 0;
+  --internal-page-orb-progress: clamp(0, var(--internal-page-scroll-progress), 0.72);
+  --internal-page-scroll-tint-strength: 0.09;
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -142,7 +145,7 @@ h2 {
   position: absolute;
   inset: 0;
   background: var(--menu-open-bg);
-  opacity: calc(var(--internal-page-scroll-progress) * 0.12);
+  opacity: calc(var(--internal-page-scroll-progress) * var(--internal-page-scroll-tint-strength));
   pointer-events: none;
   transition: opacity 180ms linear;
   z-index: 0;
@@ -162,32 +165,21 @@ h2 {
 
 .internal-page-decor__orb {
   position: absolute;
-  width: 620px;
+  width: 320vmax;
   aspect-ratio: 1;
-  right: -210px;
-  top: -250px;
+  right: 0;
+  top: 0;
   border-radius: 50%;
-  border: 1.5px solid #000;
-  background: transparent;
-  transform: translate3d(
-      calc(18px - (var(--internal-page-scroll-progress) * 42px)),
-      calc(-8px + (var(--internal-page-scroll-progress) * 42px)),
-      0
-    )
-    scale(calc(1.1 + (var(--internal-page-scroll-progress) * 1.05)));
+  border: none;
+  background: color-mix(
+    in srgb,
+    var(--menu-open-bg) calc(var(--internal-page-scroll-tint-strength) * 100%),
+    var(--bg)
+  );
+  transform: translate(50%, -50%) scale(calc(0.04 + var(--internal-page-orb-progress) * 0.86));
   transform-origin: center;
   transition: transform 180ms linear;
   will-change: transform;
-}
-
-.internal-page-decor__orb::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: var(--menu-open-bg);
-  opacity: clamp(0, calc(1 - (max(0, (var(--internal-page-scroll-progress) - 0.14)) * 5.8)), 1);
-  transition: opacity 120ms linear;
 }
 
 @media (max-width: 1024px) {
@@ -202,15 +194,10 @@ h2 {
   }
 
   .internal-page-decor__orb {
-    width: 360px;
-    right: -110px;
-    top: -150px;
-    transform: translate3d(
-        calc(8px - (var(--internal-page-scroll-progress) * 28px)),
-        calc(-4px + (var(--internal-page-scroll-progress) * 28px)),
-        0
-      )
-      scale(calc(0.98 + (var(--internal-page-scroll-progress) * 0.95)));
+    width: 320vmax;
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%) scale(calc(0.04 + var(--internal-page-orb-progress) * 0.86));
   }
 }
 

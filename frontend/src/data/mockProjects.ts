@@ -31,8 +31,11 @@ export const projects: Project[] = [
     image: '/images/works/abofilmes/abo-filmes-capa.jpg',
     otherimages: [
       '/images/works/abofilmes/abo-filmes-capa.jpg',
-      '/images/services/websites.webp',
-      '/images/services/estrategia.webp'
+      '/images/works/abofilmes/abo-filmes-1.webp',
+      '/images/works/abofilmes/abo-filmes-2.webp',
+      '/images/works/abofilmes/abo-filmes-3.webp',
+      '/images/works/abofilmes/abo-filmes-4.webp',
+      '/images/works/abofilmes/abo-filmes-5.webp'
     ],
     link: 'https://abofilmes.com.br',
     technologies: ['React', 'TypeScript', 'Node.js']
@@ -46,8 +49,11 @@ export const projects: Project[] = [
     image: '/images/works/3vcapital/3v-capital-capa.jpg',
     otherimages: [
       '/images/works/3vcapital/3v-capital-capa.jpg',
-      '/images/services/design.webp',
-      '/images/services/websites.webp'
+      '/images/works/3vcapital/3v-capital-1.webp',
+      '/images/works/3vcapital/3v-capital-2.webp',
+      '/images/works/3vcapital/3v-capital-3.webp',
+      '/images/works/3vcapital/3v-capital-4.webp',
+      '/images/works/3vcapital/3v-capital-5.webp'
     ],
     link: 'https://3vcapital.com.br',
     technologies: ['React', 'TypeScript', 'Node.js']
@@ -88,11 +94,13 @@ export const projects: Project[] = [
     type: 'Website',
     segment: 'financeiro',
     description: 'Website Corporativo com gerenciador de conteúdo para escritório de arquitetura e design. Projetos residenciais, comerciais e corporativos com excelência e inovação.',
-    image: '/images/works/goldencapital/golden-capital-capa.webp',
+    image: '/images/works/goldencapital/golden-capital-capa.jpg',
     otherimages: [
-      '/images/works/goldencapital/golden-capital.webp',
-      '/images/services/websites.webp',
-      '/images/services/design.webp'
+      '/images/works/goldencapital/golden-capital-capa.jpg',
+      '/images/works/goldencapital/golden-capital-1.webp',
+      '/images/works/goldencapital/golden-capital-2.webp',
+      '/images/works/goldencapital/golden-capital-3.webp',
+      '/images/works/goldencapital/golden-capital-4.webp'
     ],
     link: 'https://goldencapital.com.br',
     technologies: ['React', 'TypeScript', 'Node.js', 'JSON Server']
