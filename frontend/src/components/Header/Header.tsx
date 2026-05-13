@@ -53,6 +53,7 @@ const Header = () => {
   const useDarkMenuTheme = !isHome || isOverLightSection;
   const useDarkMenuButtonTheme = isHome ? isOverLightSection : isInternalMenuButtonDark;
   const useDarkLogoTheme = !isHome || isOverLightSection;
+  const useCompactLogo = (isHome ? isOverLightSection : isInternalMenuButtonDark) && !isMenuVisible;
 
   useEffect(() => {
     document.documentElement.setAttribute('data-menu-speed', MENU_SPEED_PROFILE);
@@ -61,6 +62,23 @@ const Header = () => {
       document.documentElement.removeAttribute('data-menu-speed');
     };
   }, []);
+
+  useEffect(() => {
+    const html = document.documentElement;
+    const body = document.body;
+    const prevHtmlOverflow = html.style.overflow;
+    const prevBodyOverflow = body.style.overflow;
+
+    if (isMenuVisible) {
+      html.style.overflow = 'hidden';
+      body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      html.style.overflow = prevHtmlOverflow;
+      body.style.overflow = prevBodyOverflow;
+    };
+  }, [isMenuVisible]);
 
   useEffect(() => {
     if (!isHome) return;
@@ -148,21 +166,27 @@ const Header = () => {
     <>
       <Link
         to="/"
-        className={`site-header__logo ${showIntro ? 'is-home-intro' : ''} ${useDarkLogoTheme ? 'is-over-light' : ''} ${isMenuOpen ? 'is-menu-open' : ''} ${menuState === 'closing' ? 'is-menu-closing' : ''}`}
+        className={`site-header__logo ${showIntro ? 'is-home-intro' : ''} ${useDarkLogoTheme ? 'is-over-light' : ''} ${isMenuOpen ? 'is-menu-open' : ''} ${menuState === 'closing' ? 'is-menu-closing' : ''} ${useCompactLogo ? 'is-compact' : ''}`}
         onClick={closeMenu}
       >
-        <span className="site-header__logo-word" aria-hidden="true">
-          {logoText.split('').map((char, index) => (
-            <span
-              key={`${char}-${index}`}
-              className="site-header__logo-letter"
-              data-char={char}
-              style={{ '--i': index } as CSSProperties}
-            >
-              {char}
-            </span>
-          ))}
-        </span>
+        {useCompactLogo ? (
+          <span className="site-header__logo-avatar" aria-hidden="true">
+            <img src="/images/avatar.jpg" alt="" />
+          </span>
+        ) : (
+          <span className="site-header__logo-word" aria-hidden="true">
+            {logoText.split('').map((char, index) => (
+              <span
+                key={`${char}-${index}`}
+                className="site-header__logo-letter"
+                data-char={char}
+                style={{ '--i': index } as CSSProperties}
+              >
+                {char}
+              </span>
+            ))}
+          </span>
+        )}
         <span className="site-header__sr-only">{logoText}</span>
       </Link>
 
@@ -214,7 +238,7 @@ const Header = () => {
             <div className="site-menu__contact" aria-label="Informações de contato">
               <a href="mailto:olatuthinking@gmail.com">{renderCurtainText('olatuthinking@gmail.com')}</a>
               <a href="tel:+5511999415321">{renderCurtainText('11 99941 5321')}</a>
-              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/olatuthinking/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                   <path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.8h2.9V19H5.5V9.8Zm4.73 0H13v1.26h.04c.39-.73 1.35-1.5 2.78-1.5 2.98 0 3.53 1.95 3.53 4.5V19h-2.9v-4.37c0-1.04-.02-2.38-1.45-2.38-1.45 0-1.67 1.13-1.67 2.3V19h-2.9V9.8Z" />
                 </svg>

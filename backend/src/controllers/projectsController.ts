@@ -8,7 +8,7 @@ export const getProjects = (req: Request, res: Response) => {
 
 // GET /api/projects/:id
 export const getProjectById = (req: Request, res: Response) => {
-const id = parseInt(String(req.params.id), 10);
+  const { id } = req.params;
   const project = projects.find(p => p.id === id);
   if (project) {
     res.json(project);

@@ -10,7 +10,7 @@ export type ProjectSegment =
   | 'turismo';
 
 export interface Project {
-  id: number;
+  id: string;
   title: string;
   type: string;
   segment: ProjectSegment;
@@ -23,7 +23,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 1,
+    id: 'abo-filmes',
     title: 'Abó Filmes',
     type: 'Website',
     segment: 'audiovisual',
@@ -42,25 +42,23 @@ export const projects: Project[] = [
     technologies: ['React', 'TypeScript', 'Node.js']
   },
   {
-    id: 2,
+    id: '3v-capital',
     title: '3V Capital',
     type: 'Website',
     segment: 'financeiro',
     description: 'Website corporativo para empresa de investimentos, com foco em portfólio de empresas investidas e contato comercial.',
     image: '/images/works/3vcapital/3v-capital-capa.jpg',
     otherimages: [
-      '/images/works/3vcapital/3v-capital-capa.jpg',
       '/images/works/3vcapital/3v-capital-1.webp',
       '/images/works/3vcapital/3v-capital-2.webp',
       '/images/works/3vcapital/3v-capital-3.webp',
       '/images/works/3vcapital/3v-capital-4.webp',
-      '/images/works/3vcapital/3v-capital-5.webp'
     ],
     link: 'https://3vcapital.com.br',
     technologies: ['React', 'TypeScript', 'Node.js']
   },
   {
-    id: 3,
+    id: 'ivan-ventura',
     title: 'Ivan Ventura',
     type: 'Website',
     segment: 'arquitetura',
@@ -75,22 +73,23 @@ export const projects: Project[] = [
     technologies: ['HTML', 'CSS', 'JS', 'JSON Server']
   },
   {
-    id: 4,
+    id: 'storrer-tamburus',
     title: 'Storrer Tamburus',
     type: 'Website',
     segment: 'arquitetura',
     description: 'Website Corporativo com gerenciador de conteúdo para escritório de arquitetura e design. Projetos residenciais, comerciais e corporativos com excelência e inovação.',
     image: '/images/works/storrertamburus/storrer-tamburus.webp',
     otherimages: [
-      '/images/works/storrertamburus/storrer-tamburus.webp',
-      '/images/services/websites.webp',
-      '/images/services/design.webp'
+      '/images/works/storrertamburus/storrer-tamburus-1.webp',
+      '/images/works/storrertamburus/storrer-tamburus-2.webp',
+      '/images/works/storrertamburus/storrer-tamburus-3.webp',
+      '/images/works/storrertamburus/storrer-tamburus-4.webp'
     ],
-    link: 'https://storrertamburus.com',
+    link: 'https://storrertamburus.com.br',
     technologies: ['React', 'TypeScript', 'Node.js', 'Contentful']
   },
   {
-    id: 5,
+    id: 'golden-capital',
     title: 'Golden Capital',
     type: 'Website',
     segment: 'financeiro',
@@ -107,22 +106,23 @@ export const projects: Project[] = [
     technologies: ['React', 'TypeScript', 'Node.js', 'JSON Server']
   },
   {
-    id: 6,
+    id: 'kottler',
     title: 'Kottler',
     type: 'Website',
     segment: 'marketing',
     description: 'Site institucional com gerenciador de conteúdo para agência de marketing, com foco em portfólio de projetos, cases e contato comercial.',
     image: '/images/works/kottler/kottler-capa.webp',
     otherimages: [
-      '/images/works/kottler/kottler-capa.webp',
-      '/images/services/websites.webp',
-      '/images/services/design.webp'
+      '/images/works/kottler/agencia-kottler-1.webp',
+      '/images/works/kottler/agencia-kottler-2.webp',
+      '/images/works/kottler/agencia-kottler-3.webp',
+      '/images/works/kottler/agencia-kottler-4.webp',
     ],
     link: 'https://kottler.com.br',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Contentful']    
   },
   {
-    id: 7,
+    id: 'alpargatas',
     title: 'Trainee Alpargatas',
     type: 'Website',
     segment: 'moda',
@@ -137,7 +137,7 @@ export const projects: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Contentful']    
    },
    {
-    id: 8,
+    id: 'womanlab',
     title: 'WomanLab',
     type: 'Website',
     segment: 'audiovisual',
@@ -152,7 +152,7 @@ export const projects: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Contentful']    
    },
       {
-    id: 9,
+    id: 'pluug-ai',
     title: 'Pluug.Ai',
     type: 'Website',
     segment: 'tecnologia',
@@ -167,7 +167,7 @@ export const projects: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript']    
    },
    {
-    id: 10,
+    id: 'redway',
     title: 'Redway',
     type: 'Website',
     segment: 'tecnologia',
@@ -182,7 +182,7 @@ export const projects: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Contentful']    
    }, 
       {
-    id: 11,
+    id: 'virginiamuller',
     title: 'Dra Virginia Muller',
     type: 'Website',
     segment: 'saúde',
@@ -197,7 +197,7 @@ export const projects: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Contentful']    
    },
       {
-    id: 12,
+    id: 'triuscapital',
     title: 'Trius Capital',
     type: 'Website',
     segment: 'financeiro',
@@ -212,7 +212,7 @@ export const projects: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Contentful']    
    }, 
       {
-    id: 13,
+    id: 'grupoacolher',
     title: 'Grupo Acolher',
     type: 'Website',
     segment: 'saúde',
@@ -227,7 +227,7 @@ export const projects: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Contentful']    
    }, 
   {
-    id: 14,
+    id: 'clinicapace',
     title: 'Clinica Pace',
     type: 'Website',
     segment: 'saúde',
@@ -242,7 +242,7 @@ export const projects: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Wordpress']    
    }, 
   {
-    id: 15,
+    id: 'taispacheco',
     title: 'Taís Pacheco',
     type: 'Website',
     segment: 'audiovisual',
@@ -257,7 +257,7 @@ export const projects: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Wordpress']    
    }, 
     {
-    id: 16,
+    id: 'grupopapaki',
     title: 'Grupo Papaki',
     type: 'Website',
     segment: 'audiovisual',
@@ -272,7 +272,7 @@ export const projects: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Wordpress']    
    },  
      {
-    id: 17,
+    id: 'glue',
     title: 'Glue',
     type: 'Website',
     segment: 'audiovisual',
@@ -287,7 +287,7 @@ export const projects: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Wordpress']    
    }, 
 {
-    id: 18,
+    id: 'cibelegarcia',
     title: 'Cibele Garcia',
     type: 'Website',
     segment: 'educação',
@@ -302,7 +302,7 @@ export const projects: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Wordpress']    
    },
    {
-    id: 19,
+    id: 'katiavardanega',
     title: 'Dra Kátia Vardanega',
     type: 'Website',
     segment: 'saúde',
@@ -317,7 +317,7 @@ export const projects: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Wordpress']    
    },
   {
-    id: 20,
+    id: 'onmywaytravel',
     title: 'On My Way Travel',
     type: 'Website',
     segment: 'turismo',
@@ -332,7 +332,7 @@ export const projects: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'Wordpress']    
    },  
      {
-    id: 21,
+    id: 'probene',
     title: 'Probene',
     type: 'E-commerce',
     segment: 'saúde',
@@ -347,7 +347,7 @@ export const projects: Project[] = [
     technologies: ['HTML', 'CSS', 'JavaScript', 'WooCommerce']    
    }, 
         {
-    id: 22,
+    id: 'myaswimwear',
     title: 'MYA swimwear',
     type: 'E-commerce',
     segment: 'moda',

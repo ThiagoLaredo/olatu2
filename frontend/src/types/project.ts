@@ -10,7 +10,7 @@ export type ProjectSegment =
   | 'turismo';
 
 export type Project = {
-  id: number;
+  id: string;
   title: string;
   type: string;
   segment: ProjectSegment;

@@ -180,6 +180,10 @@
     padding: 56px 20px;
   }
 
+  .recent-works-intro {
+   margin: 0 0 40px;
+ }
+
   .recent-work-card--col2 {
     margin-top: 0;
   }

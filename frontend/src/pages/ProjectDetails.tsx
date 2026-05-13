@@ -15,15 +15,13 @@ const ProjectDetails = () => {
   const [error, setError] = useState<string>('');
 
   useEffect(() => {
-    const projectId = Number(id);
-
-    if (!projectId || Number.isNaN(projectId)) {
+    if (!id || id.trim() === '') {
       setError('Projeto invalido.');
       setLoading(false);
       return;
     }
 
-    getProjectById(projectId)
+    getProjectById(id)
       .then((data) => {
         setProject(data);
         setLoading(false);

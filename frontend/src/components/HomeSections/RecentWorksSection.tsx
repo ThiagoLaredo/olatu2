@@ -27,7 +27,7 @@ const RecentWorksSection = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
-  const [imageErrors, setImageErrors] = useState<number[]>([]);
+  const [imageErrors, setImageErrors] = useState<string[]>([]);
 
   // cards da coluna 2 = índices 1 e 3
   const col2Refs = useRef<(HTMLElement | null)[]>([null, null]);

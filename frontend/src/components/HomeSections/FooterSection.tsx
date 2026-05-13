@@ -14,7 +14,7 @@ const FooterSection = () => {
           </h2>
           <a
             className="site-footer__social-link"
-            href="https://www.linkedin.com"
+            href="https://www.linkedin.com/company/olatuthinking/"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"

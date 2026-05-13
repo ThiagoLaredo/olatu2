@@ -120,6 +120,6 @@
   }
 
   .site-footer__menu {
-    flex-direction: column;
+    flex-direction: row;
   }
 }

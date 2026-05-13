@@ -191,4 +191,9 @@
   .home-hero__content {
     gap: 20Spx;
   }
+
+  .home-hero h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
 }

@@ -28,7 +28,7 @@ const Contact = () => {
             <a
               className="contact-page__card internal-fade fade-delay-5"
               role="listitem"
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/company/olatuthinking/"
               target="_blank"
               rel="noreferrer"
             >
