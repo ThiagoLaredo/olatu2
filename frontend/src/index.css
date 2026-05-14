@@ -141,17 +141,6 @@ h2 {
   background: var(--bg);
 }
 
-.internal-page-shell::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: #525252;
-  opacity: calc(var(--internal-page-scroll-progress) * var(--internal-page-scroll-tint-strength));
-  pointer-events: none;
-  transition: opacity 180ms linear;
-  z-index: 0;
-}
-
 .internal-page-shell > * {
   position: relative;
   z-index: 1;
@@ -174,8 +163,12 @@ h2 {
   border: none;
   background: color-mix(
     in srgb,
-    var(--menu-open-bg) calc(var(--internal-page-scroll-tint-strength) * 75%),
-    var(--bg)
+    color-mix(
+      in srgb,
+      var(--menu-open-bg) calc(var(--internal-page-scroll-tint-strength) * 75%),
+      var(--bg)
+    ) calc((1 - var(--internal-page-scroll-progress)) * 100%),
+    var(--internal-page-orb-end-color) calc(var(--internal-page-scroll-progress) * 100%)
   );
   opacity: calc(1 - max(0, (var(--internal-page-orb-progress) - 0.65) * 2.5));
   transform: translate(50%, -50%) scale(calc(0.04 + var(--internal-page-orb-progress) * 0.86));
