@@ -133,6 +133,7 @@ h2 {
   --internal-page-scroll-progress: 0;
   --internal-page-orb-progress: clamp(0, var(--internal-page-scroll-progress), 0.72);
   --internal-page-scroll-tint-strength: 0.09;
+  --internal-page-orb-end-color: #fff;
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -144,7 +145,7 @@ h2 {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--menu-open-bg);
+  background: #525252;
   opacity: calc(var(--internal-page-scroll-progress) * var(--internal-page-scroll-tint-strength));
   pointer-events: none;
   transition: opacity 180ms linear;
@@ -173,12 +174,13 @@ h2 {
   border: none;
   background: color-mix(
     in srgb,
-    var(--menu-open-bg) calc(var(--internal-page-scroll-tint-strength) * 100%),
+    var(--menu-open-bg) calc(var(--internal-page-scroll-tint-strength) * 75%),
     var(--bg)
   );
+  opacity: calc(1 - max(0, (var(--internal-page-orb-progress) - 0.65) * 2.5));
   transform: translate(50%, -50%) scale(calc(0.04 + var(--internal-page-orb-progress) * 0.86));
   transform-origin: center;
-  transition: transform 180ms linear;
+  transition: transform 180ms linear, background 180ms linear, opacity 320ms linear;
   will-change: transform;
 }
 
@@ -194,7 +196,7 @@ h2 {
   }
 
   .internal-page-decor__orb {
-    width: 320vmax;
+    width: 360vmax;
     right: 0;
     top: 0;
     transform: translate(50%, -50%) scale(calc(0.04 + var(--internal-page-orb-progress) * 0.86));

@@ -109,12 +109,8 @@
   top: 16px;
   left: 20px;
   z-index: 9999;
-  color: #fff;
   text-decoration: none;
-  font-family: var(--heading);
-  font-size: 28px;
-  letter-spacing: 0.08em;
-  padding: 10px 14px;
+  padding: 10px;
   pointer-events: auto;
   display: inline-flex;
   align-items: center;
@@ -122,25 +118,31 @@
 
 .site-header__logo.is-home-intro {
   opacity: 0;
-  transform: translateY(-14px);
-  animation: hero-header-enter 680ms cubic-bezier(0.22, 1, 0.36, 1) 520ms forwards;
+  animation: logo-fade-in 800ms cubic-bezier(0.22, 1, 0.36, 1) 520ms forwards;
 }
 
 .site-header__logo.is-over-light {
   color: #000;
 }
 
-.site-header__logo.is-over-light .site-header__logo-letter {
-  color: #000;
+.site-header__logo-image {
+  display: block;
+  width: auto;
+  height: 30px;
+  filter: brightness(0) invert(1);
+  transition: filter var(--menu-speed-snappy) var(--menu-ease-flow);
 }
 
-.site-header__logo.is-over-light .site-header__logo-letter::after {
-  color: #fff;
+.site-header__logo.is-over-light .site-header__logo-image {
+  filter: brightness(0) saturate(100%);
 }
 
-.site-header__logo-word {
-  display: inline-flex;
-  --logo-last-index: 4;
+.site-header__logo.is-menu-white-bg .site-header__logo-image {
+  filter: brightness(0) saturate(100%);
+}
+
+.site-header__logo.is-menu-dark-bg .site-header__logo-image {
+  filter: brightness(0) invert(1);
 }
 
 .site-header__logo-avatar {
@@ -175,30 +177,6 @@
   letter-spacing: 0;
 }
 
-.site-header__logo-letter {
-  position: relative;
-  display: inline-block;
-  color: var(--color-primary-white);
-}
-
-.site-header__logo-letter::after {
-  content: attr(data-char);
-  position: absolute;
-  inset: 0;
-  color: #000;
-  clip-path: inset(0 0 100% 0);
-}
-
-.site-header__logo.is-menu-open .site-header__logo-letter::after {
-  animation: logo-letter-curtain var(--menu-speed-flow) var(--menu-ease-flow) forwards;
-  animation-delay: calc(var(--i) * var(--menu-stagger-logo-open));
-}
-
-.site-header__logo.is-menu-closing .site-header__logo-letter::after {
-  animation: logo-letter-curtain-reverse var(--menu-speed-exit) var(--menu-ease-flow) forwards;
-  animation-delay: calc((var(--logo-last-index) - var(--i)) * var(--menu-stagger-logo-close));
-}
-
 .site-header__sr-only {
   position: absolute;
   width: 1px;
@@ -209,24 +187,6 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-@keyframes logo-letter-curtain {
-  from {
-    clip-path: inset(0 0 100% 0);
-  }
-  to {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes logo-letter-curtain-reverse {
-  from {
-    clip-path: inset(0 0 0 0);
-  }
-  to {
-    clip-path: inset(0 0 100% 0);
-  }
 }
 
 .site-header__menu-button {
@@ -268,6 +228,15 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes logo-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

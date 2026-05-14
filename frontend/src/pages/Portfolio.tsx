@@ -143,35 +143,38 @@ const Portfolio = () => {
           {!loading && !error && (
             <>
               <div className="portfolio-filter-groups internal-fade fade-delay-3">
-                <div className="portfolio-filter-group">
-                  <p className="portfolio-filter-label">Tipo do projeto</p>
-                  <div className="portfolio-filters tipo-filters">
-                    {typeFilters.map((filter) => (
-                      <button
-                        key={filter.value}
-                        type="button"
-                        className={`portfolio-filter-btn${activeTypeFilter === filter.value ? ' is-active' : ''}`}
-                        onClick={() => setActiveTypeFilter(filter.value)}
-                      >
-                        {filter.label} ({getTypeCount(filter.value)})
-                      </button>
-                    ))}
+                <h2 className="portfolio-filters-title">Filtrar por</h2>
+                <div className="portfolio-filters-wrapper">
+                  <div className="portfolio-filter-group">
+                    <p className="portfolio-filter-label">Tipo do projeto</p>
+                    <div className="portfolio-filters tipo-filters">
+                      {typeFilters.map((filter) => (
+                        <button
+                          key={filter.value}
+                          type="button"
+                          className={`portfolio-filter-btn${activeTypeFilter === filter.value ? ' is-active' : ''}`}
+                          onClick={() => setActiveTypeFilter(filter.value)}
+                        >
+                          {filter.label} ({getTypeCount(filter.value)})
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                </div>
 
-                <div className="portfolio-filter-group">
-                  <p className="portfolio-filter-label">Segmento da empresa</p>
-                  <div className="portfolio-filters segmento-filters">
-                    {segmentFilters.map((filter) => (
-                      <button
-                        key={filter.value}
-                        type="button"
-                        className={`portfolio-filter-btn${activeSegmentFilter === filter.value ? ' is-active' : ''}`}
-                        onClick={() => setActiveSegmentFilter(filter.value)}
-                      >
-                        {filter.label} ({getSegmentCount(filter.value)})
-                      </button>
-                    ))}
+                  <div className="portfolio-filter-group">
+                    <p className="portfolio-filter-label">Segmento da empresa</p>
+                    <div className="portfolio-filters segmento-filters">
+                      {segmentFilters.map((filter) => (
+                        <button
+                          key={filter.value}
+                          type="button"
+                          className={`portfolio-filter-btn${activeSegmentFilter === filter.value ? ' is-active' : ''}`}
+                          onClick={() => setActiveSegmentFilter(filter.value)}
+                        >
+                          {filter.label} ({getSegmentCount(filter.value)})
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

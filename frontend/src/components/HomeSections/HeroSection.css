@@ -124,7 +124,7 @@
   background: color-mix(
     in srgb,
     var(--color-primary-white) calc(var(--internal-page-scroll-progress) * 100%),
-    #000
+    #0c0527
   );
   transform: translate(-50%, -50%) scale(calc(0.04 + var(--internal-page-scroll-progress) * 0.86));
   transform-origin: center center;

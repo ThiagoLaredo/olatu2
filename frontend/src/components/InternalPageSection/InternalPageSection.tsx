@@ -23,10 +23,8 @@ const InternalPageSection = ({ className, ariaLabelledby, children }: InternalPa
       const rect = section.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
       const start = Math.min(viewportHeight * 0.12, 96);
-      const distance = Math.min(
-        Math.max(rect.height * 0.45, viewportHeight * 0.6),
-        viewportHeight * 1.4
-      );
+      // Keep motion consistent across pages with different heights.
+      const distance = viewportHeight * 0.95;
       const rawProgress = (start - rect.top) / distance;
       const progress = Math.max(0, Math.min(1, rawProgress));
 

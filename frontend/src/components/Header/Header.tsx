@@ -54,6 +54,8 @@ const Header = () => {
   const useDarkMenuButtonTheme = isHome ? isOverLightSection : isInternalMenuButtonDark;
   const useDarkLogoTheme = !isHome || isOverLightSection;
   const useCompactLogo = (isHome ? isOverLightSection : isInternalMenuButtonDark) && !isMenuVisible;
+  const isMenuWithWhiteBg = isMenuOpen && isHome && !useDarkMenuTheme;
+  const isMenuWithDarkBg = isMenuOpen && (!isHome || (isHome && useDarkMenuTheme));
 
   useEffect(() => {
     document.documentElement.setAttribute('data-menu-speed', MENU_SPEED_PROFILE);
@@ -166,7 +168,7 @@ const Header = () => {
     <>
       <Link
         to="/"
-        className={`site-header__logo ${showIntro ? 'is-home-intro' : ''} ${useDarkLogoTheme ? 'is-over-light' : ''} ${isMenuOpen ? 'is-menu-open' : ''} ${menuState === 'closing' ? 'is-menu-closing' : ''} ${useCompactLogo ? 'is-compact' : ''}`}
+        className={`site-header__logo ${showIntro ? 'is-home-intro' : ''} ${useDarkLogoTheme ? 'is-over-light' : ''} ${isMenuOpen ? 'is-menu-open' : ''} ${isMenuWithWhiteBg ? 'is-menu-white-bg' : ''} ${isMenuWithDarkBg ? 'is-menu-dark-bg' : ''} ${menuState === 'closing' ? 'is-menu-closing' : ''} ${useCompactLogo ? 'is-compact' : ''}`}
         onClick={closeMenu}
       >
         {useCompactLogo ? (
@@ -174,18 +176,7 @@ const Header = () => {
             <img src="/images/avatar.jpg" alt="" />
           </span>
         ) : (
-          <span className="site-header__logo-word" aria-hidden="true">
-            {logoText.split('').map((char, index) => (
-              <span
-                key={`${char}-${index}`}
-                className="site-header__logo-letter"
-                data-char={char}
-                style={{ '--i': index } as CSSProperties}
-              >
-                {char}
-              </span>
-            ))}
-          </span>
+          <img className="site-header__logo-image" src="/images/logo-olatu.svg" alt="" aria-hidden="true" />
         )}
         <span className="site-header__sr-only">{logoText}</span>
       </Link>

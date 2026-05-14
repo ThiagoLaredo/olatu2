@@ -1,5 +1,7 @@
 .project-details.internal-page-shell {
+  overflow-x: hidden;
   overflow-x: clip;
+  overflow-y: visible;
 }
 
 .project-details__container {
