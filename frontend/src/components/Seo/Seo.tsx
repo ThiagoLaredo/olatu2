@@ -10,6 +10,8 @@ type SeoProps = {
 
 const SITE_NAME = 'OLATU';
 const DEFAULT_IMAGE = '/images/social-media.jpg';
+const DEFAULT_IMAGE_WIDTH = '1200';
+const DEFAULT_IMAGE_HEIGHT = '630';
 
 const ensureMetaTag = (selector: string, attrName: 'name' | 'property', attrValue: string, content: string) => {
   let tag = document.head.querySelector<HTMLMetaElement>(selector);
@@ -67,6 +69,11 @@ const Seo = ({ title, description, image = DEFAULT_IMAGE, type = 'website' }: Se
     ensureMetaTag('meta[property="og:url"]', 'property', 'og:url', canonicalUrl);
     ensureMetaTag('meta[property="og:image"]', 'property', 'og:image', ogImage);
     ensureMetaTag('meta[property="og:site_name"]', 'property', 'og:site_name', SITE_NAME);
+
+    if (image === DEFAULT_IMAGE || !image) {
+      ensureMetaTag('meta[property="og:image:width"]', 'property', 'og:image:width', DEFAULT_IMAGE_WIDTH);
+      ensureMetaTag('meta[property="og:image:height"]', 'property', 'og:image:height', DEFAULT_IMAGE_HEIGHT);
+    }
 
     ensureMetaTag('meta[name="twitter:card"]', 'name', 'twitter:card', 'summary_large_image');
     ensureMetaTag('meta[name="twitter:title"]', 'name', 'twitter:title', fullTitle);
