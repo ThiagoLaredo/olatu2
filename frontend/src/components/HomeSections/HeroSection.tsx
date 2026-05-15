@@ -11,6 +11,7 @@ const HeroSection = () => {
     if (!section) return;
 
     let rafId = 0;
+    let mouseParallaxEnabled = false;
 
     const updateScrollProgress = () => {
       const rect = section.getBoundingClientRect();
@@ -31,12 +32,19 @@ const HeroSection = () => {
       rafId = window.requestAnimationFrame(updateScrollProgress);
     };
 
+    // Enable mouse parallax after page load (LCP+1s) to avoid blocking paint
+    const enableMouseParallax = () => {
+      mouseParallaxEnabled = true;
+    };
+    const parallaxTimeout = setTimeout(enableMouseParallax, 1000);
+
     requestProgressUpdate();
     window.addEventListener('scroll', requestProgressUpdate, { passive: true });
     window.addEventListener('resize', requestProgressUpdate);
 
-    // Mouse parallax effect
+    // Mouse parallax effect (only after page load)
     const handleMouseMove = (e: MouseEvent) => {
+      if (!mouseParallaxEnabled) return;
       const rect = section.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2; // -1 to 1
       const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
@@ -53,6 +61,7 @@ const HeroSection = () => {
     section.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
+      clearTimeout(parallaxTimeout);
       if (rafId !== 0) window.cancelAnimationFrame(rafId);
       window.removeEventListener('scroll', requestProgressUpdate);
       window.removeEventListener('resize', requestProgressUpdate);
