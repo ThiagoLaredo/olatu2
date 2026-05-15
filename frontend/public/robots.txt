@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Keep admin/tooling paths out of index if they are ever introduced.
+Disallow: /admin/
+Disallow: /api/
