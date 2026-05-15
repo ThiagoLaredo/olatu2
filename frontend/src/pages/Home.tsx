@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
       <Seo
-        title="Agencia digital criativa"
+        title="Criacao de Websites"
         description="A Olatu cria websites e experiencias digitais sob medida para impulsionar a presenca online de marcas em crescimento."
       />
       <HeroSection />

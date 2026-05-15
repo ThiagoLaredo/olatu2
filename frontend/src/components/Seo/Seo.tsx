@@ -9,7 +9,7 @@ type SeoProps = {
 };
 
 const SITE_NAME = 'OLATU';
-const DEFAULT_IMAGE = '/images/logo-olatu.svg';
+const DEFAULT_IMAGE = '/images/social-media.jpg';
 
 const ensureMetaTag = (selector: string, attrName: 'name' | 'property', attrValue: string, content: string) => {
   let tag = document.head.querySelector<HTMLMetaElement>(selector);
