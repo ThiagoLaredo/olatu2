@@ -126,7 +126,12 @@
     var(--color-primary-white) calc(var(--internal-page-scroll-progress) * 100%),
     #0c0527
   );
-  transform: translate(-50%, -50%) scale(calc(0.04 + var(--internal-page-scroll-progress) * 0.86));
+  transform:
+    translate(
+      calc(-50% + var(--hero-orb-parallax-x, 0px)),
+      calc(-50% + var(--hero-orb-parallax-y, 0px))
+    )
+    scale(calc(0.04 + var(--internal-page-scroll-progress) * 0.86));
   transform-origin: center center;
   transition: transform 180ms linear;
   opacity: 0;

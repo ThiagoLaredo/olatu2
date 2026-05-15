@@ -38,7 +38,7 @@ export const projects: Project[] = [
       '/images/works/abofilmes/abo-filmes-4.webp',
       '/images/works/abofilmes/abo-filmes-5.webp',
     ],
-    link: 'https://abofilmes.com.br',
+    link: 'https://abofilmes.com',
     technologies: ['React', 'TypeScript', 'Node.js']
   },
   {
@@ -54,7 +54,7 @@ export const projects: Project[] = [
       '/images/works/3vcapital/3v-capital-3.webp',
       '/images/works/3vcapital/3v-capital-4.webp',
     ],
-    link: 'https://3vcapital.com.br',
+    link: 'https://3vcapital.netlify.app/',
     technologies: ['React', 'TypeScript', 'Node.js']
   },
   {
@@ -69,7 +69,7 @@ export const projects: Project[] = [
       '/images/services/design.webp',
       '/images/services/estrategia.webp'
     ],
-    link: 'https://ivanventura.com',
+    link: 'https://ivanventura.com.br/',
     technologies: ['HTML', 'CSS', 'JS', 'JSON Server']
   },
   {
@@ -118,7 +118,7 @@ export const projects: Project[] = [
       '/images/works/kottler/agencia-kottler-3.webp',
       '/images/works/kottler/agencia-kottler-4.webp',
     ],
-    link: 'https://kottler.com.br',
+    link: 'https://agenciakottler.com.br',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Contentful']    
   },
   {

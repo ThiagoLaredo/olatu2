@@ -3,6 +3,7 @@ import type { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import FooterSection from '../components/HomeSections/FooterSection';
 import InternalPageSection from '../components/InternalPageSection/InternalPageSection';
+import Seo from '../components/Seo/Seo';
 import { getProjects } from '../services/projects';
 import type { Project, ProjectSegment } from '../types/project';
 import { getWebpSrcSetFromBaseImage } from '../utils/responsiveImages';
@@ -61,8 +62,10 @@ const Portfolio = () => {
   const [error, setError] = useState<string>('');
   const [activeTypeFilter, setActiveTypeFilter] = useState<ProjectTypeFilter>('all');
   const [activeSegmentFilter, setActiveSegmentFilter] = useState<SegmentFilter>('all');
+  const [showScrollTopButton, setShowScrollTopButton] = useState<boolean>(false);
 
   const mediaRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const portfolioEndRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     getProjects()
@@ -103,11 +106,42 @@ const Portfolio = () => {
     return () => observer.disconnect();
   }, [loading, error, projects, activeTypeFilter, activeSegmentFilter]);
 
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const filteredByType = filterProjectsByType(projects, activeTypeFilter);
   const filteredProjects = filteredByType.filter((project) => {
     if (activeSegmentFilter === 'all') return true;
     return project.segment === activeSegmentFilter;
   });
+
+  useEffect(() => {
+    if (loading || error || filteredProjects.length === 0) {
+      setShowScrollTopButton(false);
+      return;
+    }
+
+    const endMarker = portfolioEndRef.current;
+
+    if (!endMarker) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowScrollTopButton(entry.isIntersecting);
+      },
+      {
+        threshold: 0,
+        rootMargin: '0px 0px 95% 0px',
+      }
+    );
+
+    observer.observe(endMarker);
+
+    return () => observer.disconnect();
+  }, [loading, error, filteredProjects.length]);
 
   const getTypeCount = (filter: ProjectTypeFilter) => {
     const projectsInSegment =
@@ -130,6 +164,10 @@ const Portfolio = () => {
 
   return (
     <>
+      <Seo
+        title="Portfolio"
+        description="Veja os projetos da Olatu em websites e e-commerces para diferentes segmentos."
+      />
       <InternalPageSection className="portfolio-page" ariaLabelledby="portfolio-title">
         <div className="portfolio-page__container">
           <h1 className="internal-page-title internal-fade fade-delay-1" id="portfolio-title">Portfólio</h1>
@@ -219,6 +257,7 @@ const Portfolio = () => {
                     </div>
                   </article>
                 ))}
+                <div ref={portfolioEndRef} className="portfolio-grid__end-marker" aria-hidden="true" />
               </div>
 
               {filteredProjects.length === 0 && (
@@ -228,6 +267,21 @@ const Portfolio = () => {
           )}
         </div>
       </InternalPageSection>
+
+      {showScrollTopButton && (
+        <button
+          type="button"
+          className="portfolio-scroll-top"
+          onClick={handleScrollToTop}
+          aria-label="Voltar ao topo"
+        >
+          <span className="portfolio-scroll-top__icon" aria-hidden="true">
+            <span className="portfolio-scroll-top__line portfolio-scroll-top__line--left" />
+            <span className="portfolio-scroll-top__line portfolio-scroll-top__line--right" />
+          </span>
+        </button>
+      )}
+
       <FooterSection />
     </>
   );

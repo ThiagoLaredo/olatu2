@@ -4,10 +4,15 @@ import FooterSection from '../components/HomeSections/FooterSection';
 import HeroSection from '../components/HomeSections/HeroSection';
 import RecentWorksSection from '../components/HomeSections/RecentWorksSection';
 import ServicesSection from '../components/HomeSections/ServicesSection';
+import Seo from '../components/Seo/Seo';
 
 const Home = () => {
   return (
     <>
+      <Seo
+        title="Agencia digital criativa"
+        description="A Olatu cria websites e experiencias digitais sob medida para impulsionar a presenca online de marcas em crescimento."
+      />
       <HeroSection />
       <RecentWorksSection />
       <AboutSection />

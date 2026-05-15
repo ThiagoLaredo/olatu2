@@ -1,10 +1,15 @@
 import './About.css';
 import FooterSection from '../components/HomeSections/FooterSection';
 import InternalPageSection from '../components/InternalPageSection/InternalPageSection';
+import Seo from '../components/Seo/Seo';
 
 const About = () => {
   return (
     <>
+      <Seo
+        title="Sobre"
+        description="Conheca a Olatu: estrategia criativa, design e tecnologia para construir presenca digital com clareza e resultado."
+      />
       <InternalPageSection className="about-page" ariaLabelledby="about-title">
         <div className="about-page__container">
           <div className="about-page__content">

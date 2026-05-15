@@ -1,10 +1,15 @@
 import FooterSection from '../components/HomeSections/FooterSection';
 import InternalPageSection from '../components/InternalPageSection/InternalPageSection';
+import Seo from '../components/Seo/Seo';
 import './Contact.css';
 
 const Contact = () => {
   return (
     <>
+      <Seo
+        title="Contato"
+        description="Fale com a Olatu para alinhar escopo, prazo e estrategia do seu proximo projeto digital."
+      />
       <InternalPageSection className="contact-page" ariaLabelledby="contact-title">
         <div className="contact-page__container">
           <p className="section-eyebrow internal-fade fade-delay-1">Contato</p>

@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import FooterSection from '../components/HomeSections/FooterSection';
 import '../components/CtaLinkButton/CtaLinkButton.css';
 import InternalPageSection from '../components/InternalPageSection/InternalPageSection';
+import Seo from '../components/Seo/Seo';
 import { getProjectById } from '../services/projects';
 import type { Project } from '../types/project';
 import { getWebpSrcSetFromBaseImage } from '../utils/responsiveImages';
@@ -35,6 +36,10 @@ const ProjectDetails = () => {
   if (loading) {
     return (
       <>
+        <Seo
+          title="Projeto"
+          description="Detalhes de projeto da Olatu."
+        />
         <InternalPageSection className="project-details">
           <div className="project-details__container">
             <p className="project-details__feedback internal-fade fade-delay-1">Carregando projeto...</p>
@@ -48,6 +53,10 @@ const ProjectDetails = () => {
   if (error || !project) {
     return (
       <>
+        <Seo
+          title="Projeto nao encontrado"
+          description="Nao foi possivel carregar os detalhes deste projeto."
+        />
         <InternalPageSection className="project-details">
           <div className="project-details__container">
             <p className="project-details__feedback internal-fade fade-delay-1">Erro: {error || 'Projeto nao encontrado.'}</p>
@@ -63,6 +72,12 @@ const ProjectDetails = () => {
 
   return (
     <>
+      <Seo
+        title={project.title}
+        description={project.description}
+        image={project.image}
+        type="article"
+      />
       <InternalPageSection className="project-details" ariaLabelledby="project-details-title">
         <div className="project-details__container">
           <div className="project-details__layout">
@@ -83,7 +98,7 @@ const ProjectDetails = () => {
                   <span className="cta-link-button__label">Visitar projeto</span>
                   <span className="cta-link-button__icon" aria-hidden="true">+</span>
                 </a>
-                <Link className="project-details__back-link" to="/portfolio">Voltar para portfolio</Link>
+                <Link className="project-details__back-link" to="/portfolio">&lt; Voltar</Link>
               </div>
             </aside>
 

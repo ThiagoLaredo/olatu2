@@ -5,6 +5,7 @@ import './HeroSection.css';
 const HeroSection = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
 
+
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
@@ -34,10 +35,29 @@ const HeroSection = () => {
     window.addEventListener('scroll', requestProgressUpdate, { passive: true });
     window.addEventListener('resize', requestProgressUpdate);
 
+    // Mouse parallax effect
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = section.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2; // -1 to 1
+      const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      section.style.setProperty('--hero-orb-parallax-x', (x * 18).toFixed(2) + 'px');
+      section.style.setProperty('--hero-orb-parallax-y', (y * 18).toFixed(2) + 'px');
+    };
+    section.addEventListener('mousemove', handleMouseMove);
+
+    // Reset on mouse leave
+    const handleMouseLeave = () => {
+      section.style.setProperty('--hero-orb-parallax-x', '0px');
+      section.style.setProperty('--hero-orb-parallax-y', '0px');
+    };
+    section.addEventListener('mouseleave', handleMouseLeave);
+
     return () => {
       if (rafId !== 0) window.cancelAnimationFrame(rafId);
       window.removeEventListener('scroll', requestProgressUpdate);
       window.removeEventListener('resize', requestProgressUpdate);
+      section.removeEventListener('mousemove', handleMouseMove);
+      section.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, []);
 

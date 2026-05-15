@@ -38,7 +38,7 @@ export const projects: Project[] = [
       '/images/works/abofilmes/abo-filmes-4.webp',
       '/images/works/abofilmes/abo-filmes-5.webp',
     ],
-    link: 'https://abofilmes.com.br',
+    link: 'https://abofilmes.com',
     technologies: ['React', 'TypeScript', 'Node.js']
   },
   {
@@ -70,7 +70,7 @@ export const projects: Project[] = [
       '/images/works/ivanventura/ivan-ventura-3.webp',
       '/images/works/ivanventura/ivan-ventura-4.webp',
     ],
-    link: 'https://ivanventura.com',
+    link: 'https://ivanventura.com.br/',
     technologies: ['HTML', 'CSS', 'JS', 'JSON Server']
   },
   {
@@ -118,7 +118,7 @@ export const projects: Project[] = [
       '/images/works/kottler/agencia-kottler-3.webp',
       '/images/works/kottler/agencia-kottler-4.webp',
     ],
-    link: 'https://kottler.com.br',
+    link: 'https://agenciakottler.com.br',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Contentful']    
   },
   {
@@ -213,7 +213,7 @@ export const projects: Project[] = [
       '/images/works/grupoacolher/grupo-acolher-3.webp',
       '/images/works/grupoacolher/grupo-acolher-4.webp'
     ],
-    link: 'https://grupoacolher.com.br',
+    link: 'https://grupoacolher.com',
     technologies: ['HTML', 'CSS', 'JavaScript']    
    }, 
   {
@@ -310,7 +310,7 @@ export const projects: Project[] = [
       '/images/works/onmywaytravel/on-my-way-travel-3.webp',
       '/images/works/onmywaytravel/on-my-way-travel-4.webp'
     ],
-    link: 'https://onmywaytravel.com.br/',
+    link: 'https://omwtravel.com.br/',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Wordpress']    
    },  
      {
@@ -337,10 +337,10 @@ export const projects: Project[] = [
     description: 'E-commerce para a empresa MYA swimwear, especializada em moda praia, oferecendo produtos de alta qualidade e design exclusivo.',
     image: '/images/works/myaswimwear/mya-swimwear-capa.webp',
     otherimages: [
-      '/images/works/myaswimwear/mya-swimwear-1.webp',
-      '/images/works/myaswimwear/mya-swimwear-2.webp',
-      '/images/works/myaswimwear/mya-swimwear-3.webp',
-      '/images/works/myaswimwear/mya-swimwear-4.webp'
+      '/images/works/myaswimwear/myaswimwear-1.webp',
+      '/images/works/myaswimwear/myaswimwear-2.webp',
+      '/images/works/myaswimwear/myaswimwear-3.webp',
+      '/images/works/myaswimwear/myaswimwear-4.webp'
     ],
     link: 'https://myaswimwear.com.br/',
     technologies: ['HTML', 'CSS', 'JavaScript', 'WooCommerce']    
