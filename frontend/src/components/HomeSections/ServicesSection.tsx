@@ -152,7 +152,8 @@ const ServicesSection = () => {
                     className="services-showcase__image"
                     src={service.image}
                     alt=""
-                    loading={index === 0 ? 'eager' : 'lazy'}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               ))}

@@ -28,7 +28,15 @@
 
 .services-scroll-indicator__line {
   width: 1px;
-  height: 18px;
+  height: 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-scroll-indicator__line::before {
+  content: '';
+  position: absolute;
+  inset: 0;
   background: color-mix(in srgb, var(--text-h) 75%, transparent);
   transform-origin: top center;
   animation: services-scroll-line-expand 1.6s var(--custom-ease-3) infinite;
@@ -37,11 +45,11 @@
 @keyframes services-scroll-line-expand {
   0%,
   100% {
-    height: 18px;
+    transform: scaleY(0.3214);
     opacity: 0.45;
   }
   50% {
-    height: 56px;
+    transform: scaleY(1);
     opacity: 1;
   }
 }
@@ -344,9 +352,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .services-scroll-indicator__line {
+  .services-scroll-indicator__line::before {
     animation: none;
-    height: 36px;
+    transform: scaleY(0.6429);
     opacity: 0.8;
   }
 }

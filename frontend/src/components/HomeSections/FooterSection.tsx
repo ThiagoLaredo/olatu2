@@ -6,7 +6,7 @@ const FooterSection = () => {
     <footer className="site-footer" aria-labelledby="site-footer-title">
       <div className="home-section__container site-footer__container">
         <div className="site-footer__column">
-          <img className="site-footer__logo" src="/images/logo-olatu.svg" alt="OLATU" />
+          <img className="site-footer__logo" src="/images/logo-olatu.svg" alt="OLATU" width="200" height="42" />
           <h2 id="site-footer-title" className="site-footer__title">
             Construimos presenca digital com estrategia e clareza.
           </h2>

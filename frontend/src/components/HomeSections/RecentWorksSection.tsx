@@ -152,16 +152,16 @@ const RecentWorksSection = () => {
                         <source
                           type="image/webp"
                           srcSet={getWebpSrcSetFromBaseImage(project.image)}
-                          sizes="(max-width: 900px) 100vw, 50vw"
+                          sizes="(max-width: 900px) calc(100vw - 40px), 500px"
                         />
                         <img
                           className="recent-work-card__image"
                           src={project.image}
                           alt={`${extractClientName(project.title)} - ${project.type}`}
-                          loading={index < 2 ? 'eager' : 'lazy'}
+                          loading="lazy"
                           decoding="async"
-                          fetchPriority={index < 2 ? 'high' : 'auto'}
-                          sizes="(max-width: 900px) 100vw, 50vw"
+                          fetchPriority="auto"
+                          sizes="(max-width: 900px) calc(100vw - 40px), 500px"
                           onError={() => {
                             setImageErrors((previous) =>
                               previous.includes(project.id) ? previous : [...previous, project.id]

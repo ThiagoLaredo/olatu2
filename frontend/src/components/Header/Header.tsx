@@ -173,10 +173,10 @@ const Header = () => {
       >
         {useCompactLogo ? (
           <span className="site-header__logo-avatar" aria-hidden="true">
-            <img src="/images/avatar.jpg" alt="" />
+            <img src="/images/avatar.jpg" alt="" width="36" height="36" />
           </span>
         ) : (
-          <img className="site-header__logo-image" src="/images/logo-olatu.svg" alt="" aria-hidden="true" />
+          <img className="site-header__logo-image" src="/images/logo-olatu.svg" alt="" aria-hidden="true" width="200" height="42" />
         )}
         <span className="site-header__sr-only">{logoText}</span>
       </Link>
