@@ -118,7 +118,7 @@
 
 .site-header__logo.is-home-intro {
   opacity: 0;
-  animation: logo-fade-in 800ms cubic-bezier(0.22, 1, 0.36, 1) 520ms forwards;
+  animation: logo-fade-in 600ms cubic-bezier(0.22, 1, 0.36, 1) 0ms forwards;
 }
 
 .site-header__logo.is-over-light {
@@ -212,7 +212,7 @@
 .site-header__menu-button.is-home-intro {
   opacity: 0;
   transform: translateY(-14px);
-  animation: hero-header-enter 680ms cubic-bezier(0.22, 1, 0.36, 1) 620ms forwards;
+  animation: hero-header-enter 500ms cubic-bezier(0.22, 1, 0.36, 1) 0ms forwards;
 }
 
 .site-header__menu-button.is-over-light {
