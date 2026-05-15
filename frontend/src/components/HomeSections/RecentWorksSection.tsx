@@ -158,9 +158,9 @@ const RecentWorksSection = () => {
                           className="recent-work-card__image"
                           src={project.image}
                           alt={`${extractClientName(project.title)} - ${project.type}`}
-                          loading="lazy"
+                          loading={index === 0 ? "eager" : "lazy"}
                           decoding="async"
-                          fetchPriority="auto"
+                          fetchPriority={index === 0 ? "high" : "auto"}
                           sizes="(max-width: 900px) calc(100vw - 40px), 500px"
                           onError={() => {
                             setImageErrors((previous) =>
