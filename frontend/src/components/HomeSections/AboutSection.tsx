@@ -61,7 +61,8 @@ const AboutSection = () => {
       <div className="home-section__container about-section">
         <div>
           <h2 id="about-title" className="section-eyebrow">Estúdio Digital</h2>
-          <p className="about-scroll-text" aria-label={PARAGRAPH}>
+          <p className="about-scroll-text">
+            <span className="about-sr-only">{PARAGRAPH}</span>
             {PARAGRAPH.split('').map((char, i) => (
               <span key={i} className="about-letter" aria-hidden="true">
                 {char}
