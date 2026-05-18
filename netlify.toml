@@ -1,12 +1,7 @@
 [build]
 base = "frontend"
 command = "npm run build"
-publish = "frontend/dist"
-
-[[redirects]]
-from = "/robots.txt"
-to = "/robots.txt"
-status = 200
+publish = "dist"
 
 [[redirects]]
 from = "/*"
