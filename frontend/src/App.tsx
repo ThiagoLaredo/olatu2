@@ -6,6 +6,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Portfolio from './pages/Portfolio';
 import ProjectDetails from './pages/ProjectDetails';
+import WhatWeDo from './pages/WhatWeDo';
 import MainLayout from './layouts/MainLayout';
 
 function ScrollToTop() {
@@ -26,6 +27,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<About />} />
+          <Route path="/o-que-fazemos" element={<WhatWeDo />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/portfolio/:id" element={<ProjectDetails />} />
           <Route path="/contact" element={<Contact />} />

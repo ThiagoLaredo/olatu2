@@ -1,0 +1,122 @@
+.what-we-do-page__container {
+  max-width: var(--laptop-content-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.what-we-do-page__content .internal-page-title {
+  margin-top: 0;
+  margin-bottom: 22px;
+  max-width: 14ch;
+}
+
+.what-we-do-page__text {
+  max-width: 56ch;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.what-we-do-page__performance {
+  margin-top: 28px;
+  display: grid;
+  gap: 10px;
+  max-width: 56ch;
+}
+
+.what-we-do-page__performance-title {
+  margin: 0;
+  font-size: clamp(1.2rem, 1.4vw, 1.5rem);
+  line-height: 1.2;
+}
+
+.what-we-do-page__performance-text {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.what-we-do-page__performance-cta {
+  justify-self: start;
+  margin-top: 20px;
+}
+
+.what-we-do-page__media {
+  width: 100%;
+  min-height: clamp(220px, 36vw, 460px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+}
+
+.what-we-do-page__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  animation: what-we-do-image-fade 420ms ease;
+}
+
+.what-we-do-page__dots {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.what-we-do-page__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.what-we-do-page__dot:hover,
+.what-we-do-page__dot:focus-visible {
+  transform: scale(1.08);
+}
+
+.what-we-do-page__dot.is-active {
+  background: #000;
+}
+
+@keyframes what-we-do-image-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .what-we-do-page__container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  .what-we-do-page__media {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    gap: 12px;
+  }
+
+  .what-we-do-page__dots {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .what-we-do-page__content .internal-page-title,
+  .what-we-do-page__text,
+  .what-we-do-page__performance {
+    max-width: none;
+  }
+}

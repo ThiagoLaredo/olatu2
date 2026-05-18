@@ -218,6 +218,9 @@ const Header = () => {
               <Link to="/sobre" onClick={closeMenu}>
                 {renderCurtainText('Sobre')}
               </Link>
+              <Link to="/o-que-fazemos" onClick={closeMenu}>
+                {renderCurtainText('O que fazemos')}
+              </Link>
               <Link to="/portfolio" onClick={closeMenu}>
                 {renderCurtainText('Portfolio')}
               </Link>
