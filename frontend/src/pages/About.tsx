@@ -14,16 +14,14 @@ const About = () => {
         <div className="about-page__container">
           <div className="about-page__content">
             <p className="section-eyebrow internal-fade fade-delay-1">Sobre</p>
-            <h1 className="internal-page-title internal-fade fade-delay-2" id="about-title">Estratégia criativa para marcas que querem crescer</h1>
+            <h1 className="internal-page-title internal-fade fade-delay-2" id="about-title">Estratégia criativa para marcas que querem (e merecem) crescer</h1>
             <p className="about-page__text internal-fade fade-delay-3">
-              A Olatu combina design, tecnologia e narrativa para construir presença digital com
-              intenção. Nosso foco é criar projetos claros, elegantes e orientados a resultado,
-              respeitando a identidade de cada cliente em cada decisão.
+              A Olatu <strong>– estúdio digital –</strong> une design, tecnologia e narrativa para construir <strong>presença digital com intenção</strong>. Cada projeto é claro, elegante e orientado a resultado – respeitando sua identidade em cada decisão.
             </p>
             <p className="about-page__text internal-fade fade-delay-4">
-              Da descoberta ao lançamento, trabalhamos lado a lado com as marcas para transformar
-              objetivos de negócio em experiências digitais memoráveis.
+              Da descoberta ao lançamento, caminhamos lado a lado com você. Transformamos objetivos de negócio em experiências digitais memoráveis.
             </p>
+            <p className="about-page__text internal-fade fade-delay-4">Conte sua ideia para a Olatu.</p>
           </div>
         </div>
       </InternalPageSection>

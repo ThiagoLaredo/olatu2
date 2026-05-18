@@ -10,8 +10,8 @@ const Home = () => {
   return (
     <>
       <Seo
-        title="Criacao de Websites"
-        description="A Olatu cria websites e experiencias digitais sob medida para impulsionar a presenca online de marcas em crescimento."
+        title="Criação de Websites"
+        description="A Olatu cria websites e experiências digitais sob medida para impulsionar a presença online de marcas em crescimento. Sites rápidos, design estratégico e resultado. Estúdio digital focado em performance."
       />
       <HeroSection />
       <RecentWorksSection />

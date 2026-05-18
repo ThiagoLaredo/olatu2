@@ -74,11 +74,10 @@ const HeroSection = () => {
     <section className="home-hero" ref={sectionRef}>
       <div className="home-section__container">
         <div className="home-hero__content">
-          <span className="section-eyebrow">Agência digital criativa</span>
-          <h1>Impulsione sua marca com presença digital</h1>
+          <span className="section-eyebrow">Estúdio digital criativo</span>
+          <h1>Sua marca, em movimento</h1>
           <p>
-            Criamos websites e experiências digitais sob medida para impulsionar
-            sua presença online.
+            Criamos websites e experiências digitais sob medida para impulsionar seus resultados online.
           </p>
           <div className="home-hero__actions">
             <CtaLinkButton

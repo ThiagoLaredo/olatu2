@@ -12,7 +12,7 @@ const serviceSlideImages = [
   },
   {
     src: '/images/services/design.webp',
-    label: 'Criacao',
+    label: 'Criação',
   },
   {
     src: '/images/services/estrategia.webp',
@@ -59,15 +59,13 @@ const WhatWeDo = () => {
               Sites rápidos, criativos e estruturados
             </h1>
             <p className="what-we-do-page__text internal-fade fade-delay-3">
-              Desenvolvemos sites rápidos, criativos e estruturados para entregar a melhor performance
-              e gerar mais engajamento e resultados para a sua marca.
+              Desenvolvemos <strong>sites de alto desempenho</strong> que unem velocidade, design original e arquitetura de informação eficiente. Resultado: mais engajamento, menos rejeição e conversões reais para a sua marca.
             </p>
 
             <div className="what-we-do-page__performance internal-fade fade-delay-4">
               <h2 className="what-we-do-page__performance-title">Performance</h2>
               <p className="what-we-do-page__performance-text">
-                Todos os nossos projetos são testados nas ferramentas que medem performance.
-              </p>
+               Todo projeto Olatu é testado em ferramentas de ponta (Google PageSpeed Insights, Lighthouse e WebPageTest). Garantimos entregar <strong>notas maiores que 90</strong> em desempenho para dispositivos móveis e desktop.              </p>
               <a
                 className="cta-link-button what-we-do-page__performance-cta"
                 href="https://pagespeed.web.dev/analysis/https-olatu-com-br/rwwmnjyqkx?form_factor=mobile"

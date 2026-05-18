@@ -19,6 +19,11 @@
   line-height: 1.65;
 }
 
+.what-we-do-page__text strong,
+.what-we-do-page__performance-text strong {
+  font-weight: 500;
+}
+
 .what-we-do-page__performance {
   margin-top: 28px;
   display: grid;

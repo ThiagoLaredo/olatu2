@@ -13,19 +13,19 @@ const services: Service[] = [
   {
     title: 'Websites',
     frontLetterIndex: 4, // 'i'
-    description: 'Sites institucionais rápidos, elegantes e prontos para converter com consistencia de marca.',
+    description: 'Sites institucionais rápidos, elegantes e otimizados para conversão, com consistência de marca em cada detalhe.',
     image: '/images/services/websites.webp',
   },
   {
-    title: 'Criação',
-    frontLetterIndex: 4, // 'ç'
-    description: 'Design de interfaces e experiências digitais que encantam usuários e elevam sua marca.',
+    title: 'Design',
+    frontLetterIndex: 4, // 'i'
+    description: 'Experiências digitais que encantam usuários, elevam sua marca e reduzem a taxa de rejeição.',
     image: '/images/services/design.webp',
   },
   {
-    title: 'Conteúdo',
+    title: 'Estratégia',
     frontLetterIndex: 5, // 'm'
-    description: 'Estratégia de conteúdo para gerar visibilidade orgânica e crescimento sustentável de longo prazo.',
+    description: 'Visibilidade orgânica de longo prazo com conteúdo que educa, engaja e gera leads qualificados.',
     image: '/images/services/estrategia.webp',
   },
 ];
