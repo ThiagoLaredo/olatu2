@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { CSSProperties } from 'react';
+import CtaLinkButton from '../CtaLinkButton/CtaLinkButton';
 import './ServicesSection.css';
 
 type Service = {
@@ -189,6 +190,14 @@ const ServicesSection = () => {
             ))}
           </ul>
         </div>
+      </div>
+
+      <div className="services-scroll__cta">
+        <CtaLinkButton
+          to="/contact"
+          label="Quero um site assim"
+          ariaLabel="Quero um site assim"
+        />
       </div>
     </section>
   );

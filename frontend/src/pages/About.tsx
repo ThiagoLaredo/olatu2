@@ -1,5 +1,6 @@
 import './About.css';
 import FooterSection from '../components/HomeSections/FooterSection';
+import CtaLinkButton from '../components/CtaLinkButton/CtaLinkButton';
 import InternalPageSection from '../components/InternalPageSection/InternalPageSection';
 import Seo from '../components/Seo/Seo';
 
@@ -21,7 +22,13 @@ const About = () => {
             <p className="about-page__text internal-fade fade-delay-4">
               Da descoberta ao lançamento, caminhamos lado a lado com você. Transformamos objetivos de negócio em experiências digitais memoráveis.
             </p>
-            <p className="about-page__text internal-fade fade-delay-4">Conte sua ideia para a Olatu.</p>
+            <div className="about-page__cta internal-fade fade-delay-4">
+              <CtaLinkButton
+                to="/contact"
+                label="Conte sua ideia para a Olatu"
+                ariaLabel="Conte sua ideia para a Olatu"
+              />
+            </div>
           </div>
         </div>
       </InternalPageSection>

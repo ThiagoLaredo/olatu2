@@ -63,9 +63,9 @@ export const projects: Project[] = [
     type: 'Website',
     segment: 'arquitetura',
     description: 'Website com gerenciador de conteúdo de portfólio pessoal de projetos de arquitetura e design.',
-    image: '/images/works/ivanventura/ivan-ventura.webp',
+    image: '/images/works/ivanventura/ivan-ventura-capa.webp',
     otherimages: [
-      '/images/works/ivanventura/ivan-ventura-1.webp',
+    '/images/works/ivanventura/ivan-ventura-1.webp',
       '/images/works/ivanventura/ivan-ventura-2.webp',
       '/images/works/ivanventura/ivan-ventura-3.webp',
       '/images/works/ivanventura/ivan-ventura-4.webp',
@@ -79,7 +79,7 @@ export const projects: Project[] = [
     type: 'Website',
     segment: 'arquitetura',
     description: 'Website Corporativo com gerenciador de conteúdo para escritório de arquitetura e design. Projetos residenciais, comerciais e corporativos com excelência e inovação.',
-    image: '/images/works/storrertamburus/storrer-tamburus.webp',
+    image: '/images/works/storrertamburus/storrer-tamburus-capa.webp',
     otherimages: [
       '/images/works/storrertamburus/storrer-tamburus-1.webp',
       '/images/works/storrertamburus/storrer-tamburus-3.webp',

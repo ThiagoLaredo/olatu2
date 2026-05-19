@@ -21,7 +21,7 @@
 
 .what-we-do-page__text strong,
 .what-we-do-page__performance-text strong {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .what-we-do-page__performance {
@@ -45,7 +45,7 @@
 
 .what-we-do-page__performance-cta {
   justify-self: start;
-  margin-top: 20px;
+  margin-top: 28px;
 }
 
 .what-we-do-page__media {
@@ -104,7 +104,7 @@
 @media (max-width: 900px) {
   .what-we-do-page__container {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 42px;
     align-items: start;
   }
 

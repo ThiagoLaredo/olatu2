@@ -439,6 +439,10 @@
   --item-index: 3;
 }
 
+.site-menu__nav a:nth-child(5) {
+  --item-index: 4;
+}
+
 .site-menu.is-opening .site-menu__nav a {
   animation: menu-item-enter var(--menu-item-enter-speed) var(--menu-ease-dramatic) forwards;
   animation-delay: calc(var(--menu-item-initial-delay) + (var(--item-index) * var(--menu-item-stagger)));
@@ -451,7 +455,7 @@
 
 .site-menu.is-closing .site-menu__nav a {
   animation: menu-item-exit var(--menu-item-exit-speed) var(--menu-ease-flow) forwards;
-  animation-delay: calc((3 - var(--item-index)) * var(--menu-item-exit-stagger));
+  animation-delay: calc((4 - var(--item-index)) * var(--menu-item-exit-stagger));
 }
 
 .site-menu__nav:has(a:hover) a,
