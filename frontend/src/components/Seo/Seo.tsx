@@ -9,7 +9,7 @@ type SeoProps = {
 };
 
 const SITE_NAME = 'OLATU';
-const DEFAULT_IMAGE = '/images/social-media.jpg?v=20260518';
+const DEFAULT_IMAGE = '/images/social-media-wa.jpg?v=20260519';
 const DEFAULT_IMAGE_WIDTH = '1200';
 const DEFAULT_IMAGE_HEIGHT = '630';
 
