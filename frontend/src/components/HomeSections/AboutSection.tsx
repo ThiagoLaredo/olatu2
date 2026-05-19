@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import './AboutSection.css';
 
 const PARAGRAPH =
-  'Criatividade, performance e tecnologia caminhando juntas. Acreditamos que um produto digital de verdade precisa ser tão bonito quanto rápido, tão estratégico quanto bem executado.';
+  'Criatividade, performance e tecnologia caminhando juntas. Um produto digital de verdade precisa ser tão bonito quanto rápido, tão estratégico quanto bem executado. É por isso que unimos design, velocidade e planejamento em cada projeto.';
 
 const AboutSection = () => {
   const sectionRef = useRef<HTMLElement>(null);

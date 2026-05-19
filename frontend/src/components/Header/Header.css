@@ -490,6 +490,65 @@
   margin-bottom: 8px;
 }
 
+.site-menu__contact-title {
+  --menu-link-color: var(--color-sub-gray-2);
+  font-family: var(--heading);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-sub-gray-2);
+  margin: 0 0 12px;
+  opacity: 0;
+  transform: translateY(22px);
+  display: inline-block;
+  position: relative;
+  isolation: isolate;
+  padding: 10px 0 10px 22px;
+}
+
+.site-menu.site-menu--dark .site-menu__contact-title {
+  --menu-link-color: color-mix(in srgb, #fff 72%, transparent);
+  color: color-mix(in srgb, #fff 72%, transparent);
+}
+
+.site-menu__contact-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 68px;
+  height: 68px;
+  border-radius: 999px;
+  background: var(--color-sub-white-1);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.site-menu.site-menu--dark .site-menu__contact-title::before {
+  background: var(--color-sub-gray-2);
+}
+
+.site-menu__contact-title .menu-curtain,
+.site-menu__contact-title .menu-curtain__letter {
+  position: relative;
+  z-index: 1;
+}
+
+.site-menu.is-opening .site-menu__contact-title {
+  animation: menu-item-enter var(--menu-item-enter-speed) var(--menu-ease-dramatic) forwards;
+  animation-delay: calc((var(--menu-item-initial-delay) + 0.24s) + (var(--menu-item-stagger) * 4));
+}
+
+.site-menu.is-open .site-menu__contact-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.site-menu.is-closing .site-menu__contact-title {
+  animation: menu-item-exit var(--menu-item-exit-speed) var(--menu-ease-flow) forwards;
+  animation-delay: calc(2 * var(--menu-item-exit-stagger));
+}
+
 .site-menu__contact a {
   color: var(--text-h);
   text-decoration: none;
@@ -497,27 +556,41 @@
   line-height: 1.3;
   opacity: 0;
   transform: translateY(18px);
+  position: relative;
+  width: fit-content;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  background-position: right calc(100% - 1px);
+  transition: background-size var(--menu-speed-flow) var(--menu-ease-dramatic),
+    background-position var(--menu-speed-flow) var(--menu-ease-dramatic);
+}
+
+.site-menu__contact a:hover,
+.site-menu__contact a:focus-visible {
+  background-size: 100% 1px;
+  background-position: left calc(100% - 1px);
 }
 
 .site-menu.site-menu--dark .site-menu__contact a {
   color: #fff;
 }
 
-.site-menu__contact a:nth-child(1) {
+.site-menu__contact a:nth-child(2) {
   --contact-index: 0;
 }
 
-.site-menu__contact a:nth-child(2) {
+.site-menu__contact a:nth-child(3) {
   --contact-index: 1;
 }
 
-.site-menu__contact a:nth-child(3) {
+.site-menu__contact a:nth-child(4) {
   --contact-index: 2;
 }
 
 .site-menu.is-opening .site-menu__contact a {
   animation: menu-contact-enter var(--menu-item-enter-speed) var(--menu-ease-dramatic) forwards;
-  animation-delay: calc((var(--menu-item-initial-delay) + 0.24s) + (var(--contact-index) * var(--menu-item-stagger)));
+  animation-delay: calc((var(--menu-item-initial-delay) + 0.24s) + (var(--menu-item-stagger) * 4) + (var(--contact-index) * var(--menu-item-stagger)));
 }
 
 .site-menu.is-open .site-menu__contact a {

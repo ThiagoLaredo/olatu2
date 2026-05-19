@@ -38,6 +38,9 @@ const ServicesSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const mobileListRef = useRef<HTMLUListElement>(null);
+  const cardRefs = useRef<(HTMLLIElement | null)[]>([]);
+  const ctaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -68,10 +71,47 @@ const ServicesSection = () => {
     );
     visibilityObserver.observe(section);
 
+    // Observer para animar cada card individualmente
+    const cardObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-animated');
+            cardObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    // Observar cada card
+    cardRefs.current.forEach((card) => {
+      if (card) {
+        cardObserver.observe(card);
+      }
+    });
+
+    // Observer para animar o CTA
+    const ctaObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-animated');
+          ctaObserver.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (ctaRef.current) {
+      ctaObserver.observe(ctaRef.current);
+    }
+
     return () => {
       window.removeEventListener('scroll', updateActiveService);
       window.removeEventListener('resize', updateActiveService);
       visibilityObserver.disconnect();
+      cardObserver.disconnect();
+      ctaObserver.disconnect();
     };
   }, []);
 
@@ -173,9 +213,16 @@ const ServicesSection = () => {
           </div>
 
           {/* Mobile-only cards */}
-          <ul className="services-mobile-list" aria-label="Serviços">
-            {services.map((service) => (
-              <li key={`mobile-${service.title}`} className="services-mobile-card">
+          <ul className="services-mobile-list" aria-label="Serviços" ref={mobileListRef}>
+            {services.map((service, index) => (
+              <li
+                key={`mobile-${service.title}`}
+                className="services-mobile-card"
+                ref={(el) => {
+                  cardRefs.current[index] = el;
+                }}
+                style={{ '--card-index': index } as CSSProperties}
+              >
                 <h3 className="services-mobile-card__title">{service.title}</h3>
                 <div className="services-mobile-card__media">
                   <img
@@ -192,7 +239,7 @@ const ServicesSection = () => {
         </div>
       </div>
 
-      <div className="services-scroll__cta">
+      <div className="services-scroll__cta" ref={ctaRef}>
         <CtaLinkButton
           to="/contact"
           label="Quero um site assim"

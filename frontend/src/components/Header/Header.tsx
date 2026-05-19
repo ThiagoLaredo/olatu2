@@ -230,6 +230,7 @@ const Header = () => {
             </nav>
 
             <div className="site-menu__contact" aria-label="Informações de contato">
+              <h2 className="site-menu__contact-title">{renderCurtainText('Fale conosco')}</h2>
               <a href="mailto:olatuthinking@gmail.com">{renderCurtainText('olatuthinking@gmail.com')}</a>
               <a href="tel:+5511999415321">{renderCurtainText('11 99941 5321')}</a>
               <a href="https://www.linkedin.com/company/olatuthinking/" target="_blank" rel="noreferrer" aria-label="LinkedIn">

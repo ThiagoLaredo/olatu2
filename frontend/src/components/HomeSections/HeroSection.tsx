@@ -82,7 +82,7 @@ const HeroSection = () => {
           <div className="home-hero__actions">
             <CtaLinkButton
               to="/contact"
-              label="Falar com a gente"
+              label="Solicitar proposta"
               ariaLabel="Ir para contato"
               tone="light"
             />

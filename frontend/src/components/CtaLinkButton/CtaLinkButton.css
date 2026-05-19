@@ -16,6 +16,7 @@
   --cta-icon-size: 28px;
   --cta-text-color: var(--text-h);
   color: var(--cta-text-color);
+  min-height: 60px;
 }
 
 .cta-link-button--light {
