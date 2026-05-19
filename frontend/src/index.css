@@ -44,8 +44,16 @@
   --internal-page-enter-base-delay: 120ms;
   --menu-open-bg: #111;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-fallback-sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-manrope: 'Manrope Variable', 'Manrope', var(--font-fallback-sans);
+  --font-sora: 'Sora', var(--font-fallback-sans);
+  --font-space-grotesk: 'Space Grotesk', var(--font-fallback-sans);
+  --font-plus-jakarta: 'Plus Jakarta Sans', var(--font-fallback-sans);
+  --button-font: var(--font-manrope);
+
+  /* Default preset */
+  --sans: var(--font-space-grotesk);
+  --heading: var(--font-space-grotesk);
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -61,6 +69,21 @@
   @media (max-width: 1024px) {
     font-size: 16px;
   }
+}
+
+:root[data-font-preset='sora'] {
+  --sans: var(--font-manrope);
+  --heading: var(--font-sora);
+}
+
+:root[data-font-preset='space'] {
+  --sans: var(--font-space-grotesk);
+  --heading: var(--font-space-grotesk);
+}
+
+:root[data-font-preset='jakarta'] {
+  --sans: var(--font-plus-jakarta);
+  --heading: var(--font-plus-jakarta);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -94,6 +117,13 @@
 
 body {
   margin: 0;
+}
+
+button,
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
+  font-family: var(--button-font);
 }
 
 h1,

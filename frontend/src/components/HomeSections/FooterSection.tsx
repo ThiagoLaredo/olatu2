@@ -39,6 +39,7 @@ const FooterSection = () => {
             <div className="site-footer__menu">
               <Link to="/">Home</Link>
               <Link to="/sobre">Sobre</Link>
+              <Link to="/o-que-fazemos">O que fazemos</Link>
               <Link to="/portfolio">Portfolio</Link>
               <Link to="/contact">Contato</Link>
             </div>

@@ -2,6 +2,7 @@
   display: inline-flex;
   align-items: center;
   gap: 14px;
+  font-family: var(--button-font);
   position: relative;
   isolation: isolate;
   text-decoration: none;
