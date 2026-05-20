@@ -75,7 +75,7 @@ const HeroSection = () => {
       <div className="home-section__container">
         <div className="home-hero__content">
           <span className="section-eyebrow">Estúdio digital criativo</span>
-          <h1>Sua marca, em movimento</h1>
+          <h1>Sua marca em movimento</h1>
           <p>
             Criamos websites e experiências digitais sob medida para impulsionar seus resultados online.
           </p>
