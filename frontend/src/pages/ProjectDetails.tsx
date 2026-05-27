@@ -9,6 +9,8 @@ import type { Project } from '../types/project';
 import { getWebpSrcSetFromBaseImage } from '../utils/responsiveImages';
 import './ProjectDetails.css';
 
+const isVideoFile = (mediaPath: string) => /\.mp4$/i.test(mediaPath);
+
 const ProjectDetails = () => {
   const { id } = useParams();
   const [project, setProject] = useState<Project | null>(null);
@@ -68,7 +70,7 @@ const ProjectDetails = () => {
     );
   }
 
-  const galleryImages = project.otherimages.filter((image) => image !== project.image);
+  const galleryMedia = project.otherimages.filter((media) => media !== project.image);
 
   return (
     <>
@@ -103,22 +105,36 @@ const ProjectDetails = () => {
             </aside>
 
             <div className="project-details__gallery internal-fade fade-delay-4" aria-label="Galeria do projeto">
-              {galleryImages.map((image, index) => (
-                <figure className="project-details__image-wrap" key={`${image}-${index}`}>
-                  <picture>
-                    <source
-                      type="image/webp"
-                      srcSet={getWebpSrcSetFromBaseImage(image)}
-                      sizes="(max-width: 980px) 100vw, 58vw"
-                    />
-                    <img
-                      src={image}
-                      alt={`${project.title} - imagem ${index + 1}`}
-                      loading={index === 0 ? 'eager' : 'lazy'}
-                      decoding="async"
-                      sizes="(max-width: 980px) 100vw, 58vw"
-                    />
-                  </picture>
+              {galleryMedia.map((media, index) => (
+                <figure className="project-details__image-wrap" key={`${media}-${index}`}>
+                  {isVideoFile(media) ? (
+                    <video
+                      className="project-details__video"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload={index === 0 ? 'metadata' : 'none'}
+                    >
+                      <source src={media} type="video/mp4" />
+                      Seu navegador nao suporta videos HTML5.
+                    </video>
+                  ) : (
+                    <picture>
+                      <source
+                        type="image/webp"
+                        srcSet={getWebpSrcSetFromBaseImage(media)}
+                        sizes="(max-width: 980px) 100vw, 58vw"
+                      />
+                      <img
+                        src={media}
+                        alt={`${project.title} - imagem ${index + 1}`}
+                        loading={index === 0 ? 'eager' : 'lazy'}
+                        decoding="async"
+                        sizes="(max-width: 980px) 100vw, 58vw"
+                      />
+                    </picture>
+                  )}
                 </figure>
               ))}
             </div>

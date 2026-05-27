@@ -31,6 +31,7 @@ export const projects: Project[] = [
     image: '/images/works/abofilmes/abo-filmes-capa.jpg',
 
     otherimages: [
+      '/images/works/abofilmes/abo-filmes-optimized.mp4',
       '/images/works/abofilmes/abo-filmes-capa.jpg',
       '/images/works/abofilmes/abo-filmes-1.webp',
       '/images/works/abofilmes/abo-filmes-2.webp',
@@ -49,6 +50,7 @@ export const projects: Project[] = [
     description: 'Website corporativo para empresa de investimentos, com foco em portfólio de empresas investidas e contato comercial.',
     image: '/images/works/3vcapital/3v-capital-capa.jpg',
     otherimages: [
+      '/images/works/3vcapital/3v-capital-optimized.mp4',
       '/images/works/3vcapital/3v-capital-1.webp',
       '/images/works/3vcapital/3v-capital-2.webp',
       '/images/works/3vcapital/3v-capital-3.webp',
@@ -65,7 +67,8 @@ export const projects: Project[] = [
     description: 'Website com gerenciador de conteúdo de portfólio pessoal de projetos de arquitetura e design.',
     image: '/images/works/ivanventura/ivan-ventura-capa.webp',
     otherimages: [
-    '/images/works/ivanventura/ivan-ventura-1.webp',
+      '/images/works/ivanventura/ivan-ventura-optimized.mp4',
+      '/images/works/ivanventura/ivan-ventura-1.webp',
       '/images/works/ivanventura/ivan-ventura-2.webp',
       '/images/works/ivanventura/ivan-ventura-3.webp',
       '/images/works/ivanventura/ivan-ventura-4.webp',
@@ -81,6 +84,7 @@ export const projects: Project[] = [
     description: 'Website Corporativo com gerenciador de conteúdo para escritório de arquitetura e design. Projetos residenciais, comerciais e corporativos com excelência e inovação.',
     image: '/images/works/storrertamburus/storrer-tamburus-capa.webp',
     otherimages: [
+      '/images/works/storrertamburus/storrer-tamburus-optimized.mp4',
       '/images/works/storrertamburus/storrer-tamburus-1.webp',
       '/images/works/storrertamburus/storrer-tamburus-3.webp',
       '/images/works/storrertamburus/storrer-tamburus-2.webp',
@@ -96,6 +100,7 @@ export const projects: Project[] = [
     description: 'Website Corporativo com gerenciador de conteúdo para escritório de arquitetura e design. Projetos residenciais, comerciais e corporativos com excelência e inovação.',
     image: '/images/works/goldencapital/golden-capital-capa.jpg',
     otherimages: [
+      '/images/works/goldencapital/golden-capital-optimized.mp4',
       '/images/works/goldencapital/golden-capital-capa.jpg',
       '/images/works/goldencapital/golden-capital-1.webp',
       '/images/works/goldencapital/golden-capital-2.webp',

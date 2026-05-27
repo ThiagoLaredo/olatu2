@@ -31,6 +31,7 @@ export const projects: Project[] = [
     image: '/images/works/abofilmes/abo-filmes-capa.jpg',
 
     otherimages: [
+      '/images/works/abofilmes/abo-filmes-optimized.mp4',
       '/images/works/abofilmes/abo-filmes-capa.jpg',
       '/images/works/abofilmes/abo-filmes-1.webp',
       '/images/works/abofilmes/abo-filmes-2.webp',
