@@ -47,7 +47,7 @@ export const projects: Project[] = [
     title: '3V Capital',
     type: 'Website',
     segment: 'financeiro',
-    description: 'Website corporativo para empresa de investimentos, com foco em portfólio de empresas investidas e contato comercial.',
+    description: 'Website corporativo para gestora de patrimônio independente, voltada para apoiar decisões patrimoniais com assertividade, método e visão de longo prazo.',
     image: '/images/works/3vcapital/3v-capital-capa.jpg',
     otherimages: [
       '/images/works/3vcapital/3v-capital-1.webp',
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     title: 'Golden Capital',
     type: 'Website',
     segment: 'financeiro',
-    description: 'Website Corporativo com gerenciador de conteúdo para escritório de arquitetura e design. Projetos residenciais, comerciais e corporativos com excelência e inovação.',
+    description: 'Website corporativo para gestora de patrimônio independente, voltada para apoiar decisões patrimoniais com assertividade, método e visão de longo prazo.',
     image: '/images/works/goldencapital/golden-capital-capa.jpg',
     otherimages: [
       '/images/works/goldencapital/golden-capital-capa.jpg',
@@ -103,7 +103,7 @@ export const projects: Project[] = [
       '/images/works/goldencapital/golden-capital-3.webp',
       '/images/works/goldencapital/golden-capital-4.webp'
     ],
-    link: 'https://goldencapital.com.br',
+    link: 'https://3vcapital.netlify.app/',
     technologies: ['React', 'TypeScript', 'Node.js', 'JSON Server']
   },
   {

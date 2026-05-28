@@ -47,7 +47,7 @@ export const projects: Project[] = [
     title: '3V Capital',
     type: 'Website',
     segment: 'financeiro',
-    description: 'Website corporativo para empresa de investimentos, com foco em portfólio de empresas investidas e contato comercial.',
+    description: 'Website corporativo para gestora de patrimônio independente, voltada para apoiar decisões patrimoniais com assertividade, método e visão de longo prazo.',
     image: '/images/works/3vcapital/3v-capital-capa.jpg',
     otherimages: [
       '/images/works/3vcapital/3v-capital-optimized.mp4',
@@ -56,7 +56,7 @@ export const projects: Project[] = [
       '/images/works/3vcapital/3v-capital-3.webp',
       '/images/works/3vcapital/3v-capital-4.webp',
     ],
-    link: 'https://3vcapital.com.br',
+    link: 'https://3vcapital.netlify.app/',
     technologies: ['React', 'TypeScript', 'Node.js']
   },
   {
@@ -118,6 +118,7 @@ export const projects: Project[] = [
     description: 'Site institucional com gerenciador de conteúdo para agência de marketing, com foco em portfólio de projetos, cases e contato comercial.',
     image: '/images/works/kottler/kottler-capa.webp',
     otherimages: [
+      '/images/works/kottler/kottler-optimized.mp4',
       '/images/works/kottler/agencia-kottler-1.webp',
       '/images/works/kottler/agencia-kottler-2.webp',
       '/images/works/kottler/agencia-kottler-3.webp',
@@ -134,6 +135,7 @@ export const projects: Project[] = [
     description: 'Landing page para programa de talentos da Alpargatas, com foco em apresentar o programa, depoimentos e formulário de inscrição.',
     image: '/images/works/alpargatas/alpargatas-capa.webp',
     otherimages: [
+      '/images/works/alpargatas/alpargatas-optimized.mp4',
       '/images/works/alpargatas/alpargatas-2.webp',
       '/images/works/alpargatas/alpargatas-1.webp',
       '/images/works/alpargatas/alpargatas-3.webp',
@@ -150,6 +152,7 @@ export const projects: Project[] = [
     description: 'Site institucional para produtora de filmes, com foco em portfólio de projetos e contato comercial.',
     image: '/images/works/womanlab/womanlab-capa.webp',
     otherimages: [
+      '/images/works/womanlab/womanlab-optimized.mp4',
       '/images/works/womanlab/womanlab-1.webp',
       '/images/works/womanlab/womanlab-2.webp',
       '/images/works/womanlab/womanlab-3.webp',
@@ -182,6 +185,7 @@ export const projects: Project[] = [
     description: 'Site institucional para produtora de filmes, com foco em portfólio de projetos e contato comercial.',
     image: '/images/works/virginiamuller/virginia-muller-capa.webp',
     otherimages: [
+      '/images/works/virginiamuller/virginia-muller-optimized.mp4',
       '/images/works/virginiamuller/virginia-muller1.webp',
       '/images/works/virginiamuller/virginia-muller2.webp',
       '/images/works/virginiamuller/virginia-muller3.webp'
@@ -197,6 +201,7 @@ export const projects: Project[] = [
     description: 'Site institucional para empresa de investimentos, com foco em portfólio de projetos e contato comercial.',
     image: '/images/works/triuscapital/trius-capital-capa.webp',
     otherimages: [
+      '/images/works/triuscapital/trius-capital-optimized.mp4',
       '/images/works/triuscapital/trius-capital-1.webp',
       '/images/works/triuscapital/trius-capital-2.webp',
       '/images/works/triuscapital/trius-capital-3.webp',
@@ -213,6 +218,7 @@ export const projects: Project[] = [
     description: 'Site institucional para grupo de acolhimento, com foco em portfólio de projetos e contato comercial.',
     image: '/images/works/grupoacolher/grupo-acolher-capa.webp',
     otherimages: [
+      '/images/works/grupoacolher/acolher-optimized.mp4',
       '/images/works/grupoacolher/grupo-acolher-1.webp',
       '/images/works/grupoacolher/grupo-acolher-2.webp',
       '/images/works/grupoacolher/grupo-acolher-3.webp',
@@ -245,6 +251,7 @@ export const projects: Project[] = [
     description: 'Site de portfólio pessoal para artista visual, com foco em portfólio de projetos e contato comercial.',
     image: '/images/works/taispacheco/tais-pacheco-capa.webp',
     otherimages: [
+      '/images/works/taispacheco/taispacheco-optimized.mp4',
       '/images/works/taispacheco/taispacheco-1.webp',
       '/images/works/taispacheco/taispacheco-2.webp',
       '/images/works/taispacheco/taispacheco-3.webp',
@@ -262,6 +269,7 @@ export const projects: Project[] = [
     description: 'Site de portfólio pessoal para um selo de gestão de carreira para talentos do audiovisual.',
     image: '/images/works/glue/glue-capa.webp',
     otherimages: [
+      '/images/works/glue/glue-optimized.mp4',
       '/images/works/glue/glue-1.webp',
       '/images/works/glue/glue-2.webp',
       '/images/works/glue/glue-3.webp',
@@ -278,6 +286,7 @@ export const projects: Project[] = [
     description: 'Site de portfólio pessoal para Cibele Garcia, professora de inglês, com foco em apresentação, serviços e contato comercial.',
     image: '/images/works/cibelegarcia/cibele-garcia-capa.webp',
     otherimages: [
+      '/images/works/cibelegarcia/cibele-garcia-optimized.mp4',
       '/images/works/cibelegarcia/cibele-garcia-1.webp',
       '/images/works/cibelegarcia/cibele-garcia-2.webp',
       '/images/works/cibelegarcia/cibele-garcia-3.webp',
@@ -294,10 +303,11 @@ export const projects: Project[] = [
     description: 'Site de portfólio pessoal para Dra Kátia Vardanega, professora de inglês, com foco em apresentação, serviços e contato comercial.',
     image: '/images/works/katiavardanega/katia-vardanega-capa.webp',
     otherimages: [
-      '/images/works/katiavardanega/katia-vardanega-1.webp',
-      '/images/works/katiavardanega/katia-vardanega-2.webp',
-      '/images/works/katiavardanega/katia-vardanega-3.webp',
-      '/images/works/katiavardanega/katia-vardanega-4.webp'
+      '/images/works/katiavardanega/katiavardanega-optimized.mp4',
+      '/images/works/katiavardanega/katiavardanega-1.webp',
+      '/images/works/katiavardanega/katiavardanega-2.webp',
+      '/images/works/katiavardanega/katiavardanega-3.webp',
+      '/images/works/katiavardanega/katiavardanega-4.webp'
     ],
     link: 'https://katiavardanega.com.br/',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Wordpress']    
@@ -310,6 +320,7 @@ export const projects: Project[] = [
     description: 'Site de portfólio pessoal para On My Way Travel, agência de viagens, com foco em apresentação, serviços e contato comercial.',
     image: '/images/works/onmywaytravel/on-my-way-travel-capa.webp',
     otherimages: [
+      '/images/works/onmywaytravel/on-my-way-travel-optimized.mp4',
       '/images/works/onmywaytravel/on-my-way-travel-1.webp',
       '/images/works/onmywaytravel/on-my-way-travel-2.webp',
       '/images/works/onmywaytravel/on-my-way-travel-3.webp',
@@ -326,6 +337,7 @@ export const projects: Project[] = [
     description: 'E-commerce para a empresa Probene, desde 2002 especialistas em desenvolver e produzir alimentos e suplementos saudáveis, nutricionalmente elaborados e que promovem a saúde e o bem-estar.',
     image: '/images/works/probene/probene-capa.webp',
     otherimages: [
+      '/images/works/probene/probene-optimized.mp4',
       '/images/works/probene/probene-1.webp',
       '/images/works/probene/probene-2.webp',
       '/images/works/probene/probene-3.webp',
@@ -342,6 +354,7 @@ export const projects: Project[] = [
     description: 'E-commerce para a empresa MYA swimwear, especializada em moda praia, oferecendo produtos de alta qualidade e design exclusivo.',
     image: '/images/works/myaswimwear/mya-swimwear-capa.webp',
     otherimages: [
+      '/images/works/myaswimwear/mya-swimwear-optimized.mp4',
       '/images/works/myaswimwear/myaswimwear-1.webp',
       '/images/works/myaswimwear/myaswimwear-2.webp',
       '/images/works/myaswimwear/myaswimwear-3.webp',
@@ -358,6 +371,7 @@ export const projects: Project[] = [
     description: 'Website para a empresa Território Emocional, especializada em saúde emocional, oferecendo conteúdos e serviços de alta qualidade.',
     image: '/images/works/territorioemocional/territorio-emocional-capa.webp',
     otherimages: [
+      '/images/works/territorioemocional/territorio-emocional-optimized.mp4',
       '/images/works/territorioemocional/territorio-emocional-1.webp',
       '/images/works/territorioemocional/territorio-emocional-2.webp',
       '/images/works/territorioemocional/territorio-emocional-3.webp',
